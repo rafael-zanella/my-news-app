@@ -1,11 +1,10 @@
 import type { NextPage } from 'next'
 import { Button } from '../components/Button/Button'
-import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
   return (
     <div>
-      <Button title='Clique aqui!' />
+      <Button label='Clique aqui!' />
     </div>
   )
 }
