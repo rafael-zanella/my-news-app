@@ -2,13 +2,13 @@ import { FC } from "react";
 import { Container } from "./Button.styled";
 
 interface IProps {
-  title: string,
+  label: string,
 }
 
-export const Button: FC<IProps> = ({ title }) => {
+export const Button: FC<IProps> = ({ label }) => {
   return (
     <Container>
-      <button>{title}</button>
+      <button>{label}</button>
     </Container>
   );
 }
