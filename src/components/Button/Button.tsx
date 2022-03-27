@@ -7,7 +7,7 @@ interface IProps {
 
 export const Button: FC<IProps> = ({ label }) => {
   return (
-    <Container>
+    <Container data-testid="button">
       <button>{label}</button>
     </Container>
   );
