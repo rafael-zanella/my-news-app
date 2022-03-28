@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { useState } from 'react';
 import * as React from 'react';
 import styled from 'styled-components';
 import * as Icons from '../index';
@@ -12,23 +12,18 @@ const Search = styled.input`
   margin: 5px;
 `;
 
-interface IProps {
-  icons: any[],
-  titulo: string,
-}
-
-export const Preview: FC<IProps> = (props) => {
+export const Preview = (props) => {
   const [ selectedIcons, setSelectedIcons ] = useState([]);
 
   const [ icons, setIcons ] = useState(props.icons);
 
-  const handleOnClick = (event) => {
-    const iconeClicado = event.currentTarget.dataset.nome;
+  const onClick = (event) => {
+    const icon = event.currentTarget.dataset.nome;
 
     setSelectedIcons((estadoAnterior) => {
-      if (selectedIcons.includes(iconeClicado)) return estadoAnterior.filter(item => item !== iconeClicado);
+      if (selectedIcons.includes(icon)) return estadoAnterior.filter(item => item !== icon);
 
-      return estadoAnterior.concat(iconeClicado);
+      return estadoAnterior.concat(icon);
     });
   };
 
@@ -75,7 +70,7 @@ export const Preview: FC<IProps> = (props) => {
                   title={icone}
                   data-nome={icone}
                   data-selected={selectedIcons.includes(icone)}
-                  onClick={handleOnClick}
+                  onClick={onClick}
                   role="button"
                   tabIndex={0}
                 >
