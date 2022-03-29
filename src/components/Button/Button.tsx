@@ -1,5 +1,5 @@
-import { FC } from "react";
-import { Container } from "./Button.styled";
+import { FC } from 'react'
+import { Container } from './Button.styled'
 
 interface IProps {
   label: string,
@@ -10,5 +10,5 @@ export const Button: FC<IProps> = ({ label }) => {
     <Container data-testid="button">
       <button>{label}</button>
     </Container>
-  );
+  )
 }
