@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import * as React from 'react';
-import styled from 'styled-components';
-import * as Icons from '../index';
-import { Container, GlobalStyle, ContainerIcons } from './Preview.styled';
+import { useState } from 'react'
+import * as React from 'react'
+import styled from 'styled-components'
+import * as Icons from '../index'
+import { Container, GlobalStyle, ContainerIcons } from './Preview.styled'
 
 const Search = styled.input`
   width: 100%;
@@ -10,22 +10,22 @@ const Search = styled.input`
   color: black;
   padding: 5px;
   margin: 5px;
-`;
+`
 
 export const Preview = (props) => {
-  const [ selectedIcons, setSelectedIcons ] = useState([]);
+  const [selectedIcons, setSelectedIcons] = useState([])
 
-  const [ icons, setIcons ] = useState(props.icons);
+  const [icons, setIcons] = useState(props.icons)
 
   const onClick = (event) => {
-    const icon = event.currentTarget.dataset.nome;
+    const icon = event.currentTarget.dataset.nome
 
     setSelectedIcons((estadoAnterior) => {
-      if (selectedIcons.includes(icon)) return estadoAnterior.filter(item => item !== icon);
+      if (selectedIcons.includes(icon)) return estadoAnterior.filter(item => item !== icon)
 
-      return estadoAnterior.concat(icon);
-    });
-  };
+      return estadoAnterior.concat(icon)
+    })
+  }
 
   return (
     <Container>
@@ -54,11 +54,11 @@ export const Preview = (props) => {
             onChange={(event) => {
               setIcons(
                 icons.map((item) => {
-                  const pesquisa = event.target.value.toLowerCase();
-                  item.isVisivel = item.icone.toLowerCase().includes(pesquisa);
-                  return item;
-                }),
-              );
+                  const pesquisa = event.target.value.toLowerCase()
+                  item.isVisivel = item.icone.toLowerCase().includes(pesquisa)
+                  return item
+                })
+              )
             }}
           />
           <ContainerIcons>
@@ -82,5 +82,5 @@ export const Preview = (props) => {
         )}
       </main>
     </Container>
-  );
-};
+  )
+}

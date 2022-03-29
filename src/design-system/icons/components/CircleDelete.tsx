@@ -1,5 +1,5 @@
-import * as React from "react"
-import { SVGProps } from "react"
+import * as React from 'react'
+import { SVGProps } from 'react'
 
 export const CircleDelete = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -33,4 +33,3 @@ export const CircleDelete = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 )
-
