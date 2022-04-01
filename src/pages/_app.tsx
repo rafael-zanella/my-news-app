@@ -1,6 +1,6 @@
 import type { AppProps } from 'next/app'
-import { ThemeContextProvider } from '../Contexts/ThemeContext/ThemeContext'
-import { light } from '../design-system/themes/light'
+import { ThemeContextProvider } from '@/Contexts/ThemeContext/ThemeContext'
+import { light } from '@/design-system/themes/light'
 
 import GlobalStyle from '../design-system/global'
 

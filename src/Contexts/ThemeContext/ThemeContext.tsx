@@ -1,7 +1,7 @@
 import { createContext, FC, useContext, useEffect, useState } from 'react'
-import { light } from '../../design-system/themes/light'
-import { dark } from '../../design-system/themes/dark'
-import { ITheme } from '../../design-system/themes/types/theme.types'
+import { light } from '@/design-system/themes/light'
+import { dark } from '@/design-system/themes/dark'
+import { ITheme } from '@/design-system/themes/types/theme.types'
 import { ThemeProvider } from 'styled-components'
 
 type IContext = {

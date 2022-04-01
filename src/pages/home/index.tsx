@@ -1,4 +1,4 @@
-import { useTheme } from '../../Contexts/ThemeContext/ThemeContext'
+import { useTheme } from '@/Contexts/ThemeContext/ThemeContext'
 
 const Home = () => {
   const { changeTheme } = useTheme()
