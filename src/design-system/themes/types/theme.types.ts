@@ -16,6 +16,15 @@ export interface ITheme {
     actionSheet: string,
     imageCaption: string,
 
-    p1: string
+    p1: string,
+
+    h1Medium: string,
+    h1Bold: string,
+
+    h2Medium: string,
+    h2Bold: string,
+
+    h3Medium: string,
+    h3Bold: string,
   }
 }
