@@ -36,7 +36,6 @@ export const RadioButtonLabel = styled.label`
   border-radius: 40px;
   background-color: ${props => props.theme.colors.complementaryColor};
   color: ${props => props.theme.colors.onComplementaryColor};
-  font: ${({ theme }) => theme.fonts.h2Medium};
 `
 
 export const RadioButton = styled.input`

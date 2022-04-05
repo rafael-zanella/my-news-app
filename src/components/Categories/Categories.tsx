@@ -2,6 +2,7 @@ import { Container, Item, RadioButton, RadioButtonLabel, List } from './Categori
 import { Categories as items } from './Categories.constants'
 import { FC } from 'react'
 import { IProps } from './Categories.types'
+import { Typography } from '@/design-system/Typography'
 
 export const Categories: FC<IProps> = ({ defaultValue, onChange }) => {
   const handleOnChange = (e: any) => {
@@ -20,7 +21,9 @@ export const Categories: FC<IProps> = ({ defaultValue, onChange }) => {
               defaultChecked={defaultValue === item}
               onChange={handleOnChange}
             />
-            <RadioButtonLabel htmlFor={item}>{item}</RadioButtonLabel>
+            <RadioButtonLabel htmlFor={item}>
+              <Typography type='h3'>{item}</Typography>
+            </RadioButtonLabel>
           </Item>
         ))}
       </List>

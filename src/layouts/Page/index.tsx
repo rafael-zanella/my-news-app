@@ -12,14 +12,14 @@ export const Page: FC<IPage> = ({ children }) => (
 )
 
 const Container = styled.div`
-  overflow: hidden;
   min-height: 100vh;
-  min-width: 100vw;
-  padding: 10px;
+  padding: 10px 10px 10px 10px;
+  overflow: hidden;
 
   display: grid;
-  gap: 20px;
+  grid-gap: 20px;
   grid-template-rows: 50px 40px ;
+  grid-template-columns: 100%;
   grid-template-areas: 
     "header"
     "categories"

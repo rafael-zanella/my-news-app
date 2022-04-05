@@ -8,6 +8,7 @@ import {
   Bell
 } from '@/design-system/icons'
 import { useTheme } from '@/Contexts/ThemeContext/ThemeContext'
+import { Typography } from '@/design-system/Typography'
 
 export const Header = () => {
   const { changeTheme, theme } = useTheme()
@@ -16,7 +17,7 @@ export const Header = () => {
     <Container>
       <Title>
         <LogoDefault fill={theme.colors.onBackgroundColor} />
-        <h1>My News app</h1>
+        <Typography type='h2' fontWeight={700}>My News app</Typography>
       </Title>
 
       <Actions>
