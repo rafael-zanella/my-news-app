@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   position: relative ;
-
+  justify-content: center;
   width: 100vw;
   left: -10px;
 `
@@ -26,10 +26,6 @@ export const Item = styled.div`
   }
   :last-child {
     margin-right: 10px;
-  }
-
-  :hover {
-    opacity: 0.8;
   }
 `
 

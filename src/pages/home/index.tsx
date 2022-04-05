@@ -1,14 +1,23 @@
-import { useTheme } from '@/Contexts/ThemeContext/ThemeContext'
+import { Categories } from '@/components/Categories/Categories'
+import { Header } from '@/components/Header/Header'
+import { Page } from '@/layouts/Page'
 
 const Home = () => {
-  const { changeTheme } = useTheme()
-
   return (
-    <div>
-      <h1>Home Page</h1>
+    <Page>
+      <div style={{ gridArea: 'header' }}>
+        <Header />
+      </div>
 
-      <button onClick={changeTheme}>change theme</button>
-    </div>
+      <div style={{ gridArea: 'categories' }}>
+        <Categories defaultValue='All' onChange={() => {}} />
+      </div>
+
+      <main style={{ gridArea: 'main' }}>
+        Noticia
+      </main>
+
+    </Page>
   )
 }
 

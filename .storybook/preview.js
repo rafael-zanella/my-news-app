@@ -1,8 +1,8 @@
-// import { ThemeContextProvider } from "../src/Contexts/ThemeContext/ThemeContext"
-
 import { light } from '../src/design-system/themes/light'
 import { dark } from '../src/design-system/themes/dark'
-import { ThemeProvider } from "styled-components";
+import { ThemeContextProvider } from '../src/Contexts/ThemeContext/ThemeContext'
+import { ThemeProvider } from 'styled-components';
+
 
 
 
@@ -40,9 +40,12 @@ const withThemeProvider=(Story, context)=>{
   const theme = getTheme(context.globals.theme)
   console.log(theme)
   return (
-    <ThemeProvider theme={theme}>
-      <Story {...context.globals} />
-    </ThemeProvider>
+    <ThemeContextProvider initialTheme={context.globals.theme}>
+      {/* Need to improve this code */}
+      <ThemeProvider theme={theme}>
+         <Story {...theme} />
+      </ThemeProvider>
+    </ThemeContextProvider>
   )
 }
 export const decorators = [withThemeProvider];
