@@ -1,8 +1,10 @@
 import styled, { css } from 'styled-components'
+import { DefaultFont } from './DefaultFont'
 import { IFont } from './Font.types'
 
 export const H1 = styled.h1<IFont>`
-  font: 3.9vw Roboto;
+  ${DefaultFont}
+  font-size: 3.9vw;
 
   ${props => props && css`
     ${{ ...props } as any}
