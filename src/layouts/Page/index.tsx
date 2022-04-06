@@ -25,4 +25,8 @@ const Container = styled.div`
     "categories"
     "main"
   ;
+
+  @media screen and (min-width: 768px){
+    // TODO
+  }
 `
