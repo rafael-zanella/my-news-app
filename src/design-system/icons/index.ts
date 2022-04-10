@@ -32,3 +32,12 @@ export { HeartBlack } from './components/HeartBlack'
 // Find better eyes icon
 export { Eye } from './components/Eye'
 export { EyeSlash } from './components/EyeSlash'
+
+export { Home } from './components/Home'
+export { HomeSelected } from './components/HomeSelected'
+export { Search } from './components/Search'
+export { SearchSelected } from './components/SearchSelected'
+export { Bookmark } from './components/Bookmark'
+export { BookmarkSelected } from './components/BookmarkSelected'
+export { Settings } from './components/Settings'
+export { SettingsSelected } from './components/SettingsSelected'
