@@ -24,6 +24,7 @@ const Container = styled.div`
     "header"
     "categories"
     "main"
+    "nav-menu"
   ;
 
   @media screen and (min-width: 768px){

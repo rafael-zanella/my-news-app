@@ -1,5 +1,6 @@
 import { Categories } from '@/components/Categories/Categories'
 import { Header } from '@/components/Header/Header'
+import { NavMenu } from '@/components/NavMenu/NavMenu'
 import { ListOfPostCards } from '@/components/PostCard/ListOfPostCards'
 import { PostCard } from '@/components/PostCard/PostCard'
 import { Page } from '@/layouts/Page'
@@ -15,7 +16,7 @@ const Home = () => {
         <Categories defaultValue='All' onChange={() => {}} />
       </div>
 
-      <main style={{ gridArea: 'main' }}>
+      <main style={{ gridArea: 'main', marginBottom: '50px' }}>
         <ListOfPostCards>
           <PostCard
             img="https://images.unsplash.com/photo-1598094670018-abf669538033?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
@@ -67,6 +68,9 @@ const Home = () => {
         </ListOfPostCards>
       </main>
 
+      <footer style={{ gridArea: 'nav-menu' }}>
+        <NavMenu />
+      </footer>
     </Page>
   )
 }
