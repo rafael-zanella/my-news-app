@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-max-width: 700px;
   display: grid;
   justify-items: start;
   justify-content: center;

@@ -3,22 +3,20 @@ import { Header } from '@/components/Header/Header'
 import { NavMenu } from '@/components/NavMenu/NavMenu'
 import { ListOfPostCards } from '@/components/PostCard/ListOfPostCards'
 import { PostCard } from '@/components/PostCard/PostCard'
-import { Page } from '@/layouts/Page'
+import { HeaderArea, HomePage, MainArea, NavArea } from './home.styled'
 import Link from 'next/link'
 import { mockNews } from './home.mocks'
 
 export const Home = () => {
   return (
-    <Page>
-      <div style={{ gridArea: 'header' }}>
+    <HomePage>
+      <HeaderArea>
         <Header />
-      </div>
+      </HeaderArea>
 
-      <div style={{ gridArea: 'categories' }}>
+      <MainArea>
         <Categories defaultValue='All' onChange={() => {}} />
-      </div>
 
-      <main style={{ gridArea: 'main', marginBottom: '50px' }}>
         <ListOfPostCards>
           {
             mockNews.map((item) => (
@@ -36,11 +34,11 @@ export const Home = () => {
             ))
           }
         </ListOfPostCards>
-      </main>
+      </MainArea>
 
-      <footer style={{ gridArea: 'nav-menu' }}>
+      <NavArea>
         <NavMenu />
-      </footer>
-    </Page>
+      </NavArea>
+    </HomePage>
   )
 }

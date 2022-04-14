@@ -10,7 +10,7 @@ export const H4 = styled.h4<IFont>`
     ${{ ...props } as any}
   `}
 
-  @media screen and (min-width: 700px) {
+  @media screen and (min-width: 800px) {
     font-size: 21px;
   }
 `

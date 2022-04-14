@@ -1,7 +1,7 @@
 import {
   Container,
   Actions,
-  Title
+  Logo
 } from './Header.styled'
 import {
   LogoDefault,
@@ -15,10 +15,10 @@ export const Header = () => {
 
   return (
     <Container>
-      <Title>
+      <Logo>
         <LogoDefault fill={theme.colors.onBackgroundColor} />
-        <Typography type='h2' fontWeight={700}>My News app</Typography>
-      </Title>
+        <Typography type='h2' fontWeight={700}>My News App</Typography>
+      </Logo>
 
       <Actions>
         <Bell
