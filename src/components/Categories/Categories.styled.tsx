@@ -1,22 +1,36 @@
 import styled from 'styled-components'
 
-export const Container = styled.div`
-  position: relative ;
-  justify-content: center;
-  width: 100vw;
-  left: -10px;
-`
-
 export const List = styled.div`
   display: flex;
   gap: 10px;
-  white-space: nowrap;
+  
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   -ms-overflow-style: -ms-autohiding-scrollbar;
 
   ::-webkit-scrollbar {
     display: none;
+  }
+`
+
+export const Container = styled.div`
+  position: relative ;
+  display: flex;
+  width: 100vw;
+  left: -10px;
+  padding: 20px 0 10px;
+  
+  @media screen and (min-width: 768px) {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0 20px;
+
+    ${List} {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
   }
 `
 

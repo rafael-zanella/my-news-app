@@ -26,22 +26,22 @@ export const PostCard: FC<IProps> = (props) => {
     <Container>
       <Img src={props.img} alt='' />
       <Intro>
-        <Typography type='h3' fontWeight={700}>{props.intro}</Typography>
+        <Typography type='h4' fontWeight={700}>{props.intro}</Typography>
       </Intro>
 
       <Author>
-        <Typography type='h4'>By {props.author}</Typography>
+        <Typography type='h5'>By {props.author}</Typography>
       </Author>
 
       <Footer>
         <Category>
-          <Typography type='h4' fontWeight={700}>{props.category}</Typography>
+          <Typography type='h5' fontWeight={700}>{props.category}</Typography>
         </Category>
 
         <Dot />
 
         <Date>
-          <Typography type='h4'>{props.date}</Typography>
+          <Typography type='h5'>{props.date}</Typography>
         </Date>
       </Footer>
 

@@ -1,4 +1,4 @@
-import { Container, Item, RadioButton, RadioButtonLabel, List } from './Categories.styled'
+import { Container, Item, RadioButton, RadioButtonLabel, List, ArrowIconBox } from './Categories.styled'
 import { Categories as items } from './Categories.constants'
 import { FC } from 'react'
 import { IProps } from './Categories.types'
@@ -22,7 +22,7 @@ export const Categories: FC<IProps> = ({ defaultValue, onChange }) => {
               onChange={handleOnChange}
             />
             <RadioButtonLabel htmlFor={item}>
-              <Typography type='h3'>{item}</Typography>
+              <Typography type='h4'>{item}</Typography>
             </RadioButtonLabel>
           </Item>
         ))}

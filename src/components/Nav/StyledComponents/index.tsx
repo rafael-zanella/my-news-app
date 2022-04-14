@@ -57,13 +57,13 @@ export const Container = styled.div`
     flex-direction: column;
     gap: 20px;
 
-    box-shadow: 1px 0 5px 0px rgba(50, 50, 50, 0.1);
+    border-right: 1px solid ${({ theme }) => theme.colors.complementaryColor};
 
 
 
     ${Logo} {
       position: fixed;
-      top: 20px;
+      top: 40px;
       
       h2 { display: none }
     }
