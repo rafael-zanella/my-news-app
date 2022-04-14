@@ -1,20 +1,18 @@
 import { Categories } from '@/components/Categories/Categories'
-import { Header } from '@/components/Header/Header'
-import { NavMenu } from '@/components/NavMenu/NavMenu'
 import { ListOfPostCards } from '@/components/PostCard/ListOfPostCards'
 import { PostCard } from '@/components/PostCard/PostCard'
-import { HeaderArea, HomePage, MainArea, NavArea } from './home.styled'
+import { HomeLayout } from './home.styled'
 import Link from 'next/link'
 import { mockNews } from './home.mocks'
+import { Nav } from '@/components/Nav/Nav'
 
 export const Home = () => {
   return (
-    <HomePage>
-      <HeaderArea>
-        <Header />
-      </HeaderArea>
+    <HomeLayout>
 
-      <MainArea>
+      <Nav />
+
+      <main>
         <Categories defaultValue='All' onChange={() => {}} />
 
         <ListOfPostCards>
@@ -34,11 +32,7 @@ export const Home = () => {
             ))
           }
         </ListOfPostCards>
-      </MainArea>
-
-      <NavArea>
-        <NavMenu />
-      </NavArea>
-    </HomePage>
+      </main>
+    </HomeLayout>
   )
 }
