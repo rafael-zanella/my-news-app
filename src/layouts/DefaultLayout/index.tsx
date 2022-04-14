@@ -10,8 +10,9 @@ export const DefaultLayout = styled.div`
     display: flex;
     justify-content: center;
     margin: 0 auto;
+    
     main {
-      margin-left: 100px;
+      margin: 0 100px;
       max-width: 700px;
     }
   }
