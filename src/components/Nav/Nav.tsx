@@ -49,7 +49,7 @@ export const Nav = () => {
 
       <Menu>
         {
-          menuItems.map(item => (
+          menu.map(item => (
             <Item key={item.title} onClick={() => updateMenu(item.id)}>
               <Link href={item.href}>
                 <div>
