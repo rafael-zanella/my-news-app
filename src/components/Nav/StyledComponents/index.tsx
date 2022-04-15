@@ -7,14 +7,19 @@ export const Item = styled.div`
 
 export const Menu = styled.div`
   background-color: ${props => props.theme.colors.backgroundColor};
-  position: fixed;
-  bottom: 0;
-  left: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  box-shadow: 0px -1px 5px 0px rgba(50, 50, 50, 0.1);
+  
+
+  @media screen and (max-width: 767px) {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    box-shadow: 0px -1px 5px 0px rgba(50, 50, 50, 0.1);
+  }
 `
 
 export const Logo = styled.div`
@@ -27,8 +32,11 @@ export const Logo = styled.div`
 `
 
 export const Notification = styled.div`
-  position: absolute;
-  right: 0;
+  position: relative;
+  @media screen and (max-width: 767px) {
+    position: absolute;
+    right: 0;
+  }
 `
 
 export const Container = styled.div`
@@ -48,14 +56,13 @@ export const Container = styled.div`
   @media screen and (min-width: 768px) {
     position: fixed;
     left: 0;
-    top: 0;
 
     height: 100vh;
-    width: 60px;
+    width: 6em;
     
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 50px;
 
     border-right: 1px solid ${({ theme }) => theme.colors.complementaryColor};
 
@@ -67,13 +74,13 @@ export const Container = styled.div`
       
       h2 { display: none }
     }
-    ${Notification} { position: relative }
+    ${Notification} { position: fixed; top: 130px; }
 
     ${Menu} {
-      position: relative;
+      position: fixed;
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 50px;
 
       width: unset;
       box-shadow: none;
