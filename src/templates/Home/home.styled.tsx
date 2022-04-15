@@ -7,6 +7,11 @@ export const HomeLayout = styled(DefaultLayout)`
     flex-direction: column;
     gap: 20px;
 
-    margin-bottom: 50px;
+    margin-bottom: 70px;
+
+    ::after {
+      content: ".";
+      align-self: center;
+    }
   }
 `

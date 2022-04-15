@@ -6,13 +6,15 @@ export const DefaultLayout = styled.div`
   overflow: hidden;
 
   @media screen and (min-width: 768px) {
-    max-width: 1280px;
+    position: relative;
     display: flex;
     justify-content: center;
     margin: 0 auto;
+    max-width: 1280px;
+    padding: 0 10px;
     
     main {
-      margin: 0 100px;
+      margin: 0 5vw;
       max-width: 700px;
     }
   }

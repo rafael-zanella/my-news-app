@@ -11,12 +11,13 @@ export const Menu = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  
+  padding: 0 2em;
 
   @media screen and (max-width: 767px) {
     position: fixed;
     bottom: 0;
     left: 0;
+    padding: 0;
 
     box-shadow: 0px -1px 5px 0px rgba(50, 50, 50, 0.1);
   }
@@ -51,12 +52,7 @@ export const Container = styled.div`
   width: 100%;
   gap: 10px;
 
-
-
   @media screen and (min-width: 768px) {
-    position: fixed;
-    left: 0;
-
     height: 100vh;
     width: 6em;
     
@@ -64,16 +60,13 @@ export const Container = styled.div`
     flex-direction: column;
     gap: 50px;
 
-    border-right: 1px solid ${({ theme }) => theme.colors.complementaryColor};
-
-
-
     ${Logo} {
       position: fixed;
       top: 40px;
       
       h2 { display: none }
     }
+
     ${Notification} { position: fixed; top: 130px; }
 
     ${Menu} {
@@ -86,10 +79,13 @@ export const Container = styled.div`
       box-shadow: none;
 
       ${Item} { padding: 0 }
-
     }
-
   }
+`
 
-
+export const Wrapper = styled.div`
+  @media screen and (min-width: 768px) {
+    position: relative;
+    border-right: 1px solid ${({ theme }) => theme.colors.complementaryColor};
+  }
 `

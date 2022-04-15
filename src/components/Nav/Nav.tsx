@@ -1,4 +1,5 @@
 import {
+  Wrapper,
   Container,
   Notification,
   Logo,
@@ -32,39 +33,41 @@ export const Nav = () => {
   }
 
   return (
-    <Container>
-      <Logo>
-        <LogoDefault fill={colors.onBackgroundColor} />
-        <Typography type='h2' fontWeight={700}>My News App</Typography>
-      </Logo>
+    <Wrapper>
+      <Container>
+        <Logo>
+          <LogoDefault fill={colors.onBackgroundColor} />
+          <Typography type='h2' fontWeight={700}>My News App</Typography>
+        </Logo>
 
-      <Notification>
-        <Bell
-          width={24}
-          height={24}
-          onClick={changeTheme}
-          stroke={colors.onBackgroundColor}
-        />
-      </Notification>
+        <Notification>
+          <Bell
+            width={24}
+            height={24}
+            onClick={changeTheme}
+            stroke={colors.onBackgroundColor}
+          />
+        </Notification>
 
-      <Menu>
-        {
-          menu.map(item => (
-            <Item key={item.title} onClick={() => updateMenu(item.id)}>
-              <Link href={item.href}>
-                <div>
-                  {
-                    item.isActive
-                      ? <item.IconSelected stroke={colors.onBackgroundColor} fill={colors.onBackgroundColor} />
-                      : <item.Icon stroke={colors.onBackgroundColor} fill={colors.backgroundColor} />
-                  }
-                </div>
-              </Link>
-            </Item>
-          ))
-        }
-      </Menu>
+        <Menu>
+          {
+            menu.map(item => (
+              <Item key={item.title} onClick={() => updateMenu(item.id)}>
+                <Link href={item.href}>
+                  <div>
+                    {
+                      item.isActive
+                        ? <item.IconSelected stroke={colors.onBackgroundColor} fill={colors.onBackgroundColor} />
+                        : <item.Icon stroke={colors.onBackgroundColor} fill={colors.backgroundColor} />
+                    }
+                  </div>
+                </Link>
+              </Item>
+            ))
+          }
+        </Menu>
 
-    </Container>
+      </Container>
+    </Wrapper>
   )
 }
