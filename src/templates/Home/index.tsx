@@ -22,7 +22,8 @@ export const Home = () => {
                 <article>
                   <PostCard
                     img={item.img}
-                    intro={item.intro}
+                    imgAlt={item.imgAlt}
+                    title={item.title}
                     author={item.author}
                     category={item.category as any}
                     date={item.date}

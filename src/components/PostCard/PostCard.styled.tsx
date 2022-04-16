@@ -7,7 +7,7 @@ export const Container = styled.div`
   gap: 10px;
   grid-template-columns: 140px 2fr 10px 4.5fr;
   grid-template-areas: 
-    "img intro intro intro"
+    "img title title title"
     "img author author author"
     "img footer footer footer"
     ". . . ."
@@ -28,8 +28,8 @@ export const Img = styled.img`
   height: 140px;
 `
 
-export const Intro = styled.div`
-  grid-area: intro;
+export const Title = styled.div`
+  grid-area: title;
   color: ${({ theme }) => theme.colors.onBackgroundColor};
 `
 
