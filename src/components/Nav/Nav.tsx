@@ -33,7 +33,7 @@ export const Nav = () => {
   }
 
   return (
-    <Wrapper>
+    <Wrapper data-testid="nav">
       <Container>
         <Logo>
           <LogoDefault fill={colors.onBackgroundColor} />
