@@ -8,7 +8,7 @@ import { Nav } from '@/components/Nav/Nav'
 
 export const Home = () => {
   return (
-    <HomeLayout>
+    <HomeLayout data-testid="home">
 
       <Nav />
 
