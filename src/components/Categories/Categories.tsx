@@ -10,10 +10,10 @@ export const Categories: FC<IProps> = ({ defaultValue, onChange }) => {
   }
 
   return (
-    <Container>
+    <Container data-testid="categories">
       <List>
         { items.map(item => (
-          <Item key={item}>
+          <Item key={item} data-testid="categories_item">
             <RadioButton
               type="radio"
               name="radio"
