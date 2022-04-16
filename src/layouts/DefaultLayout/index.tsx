@@ -1,3 +1,4 @@
+import { breakpoints } from '@/design-system/breakpoints'
 import styled from 'styled-components'
 
 export const DefaultLayout = styled.div`
@@ -5,7 +6,7 @@ export const DefaultLayout = styled.div`
   padding: 10px;
   overflow: hidden;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (${breakpoints.tablet}) {
     position: relative;
     display: flex;
     justify-content: center;

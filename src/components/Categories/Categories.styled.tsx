@@ -1,3 +1,4 @@
+import { breakpoints } from '@/design-system/breakpoints'
 import styled from 'styled-components'
 
 export const List = styled.div`
@@ -20,7 +21,7 @@ export const Container = styled.div`
   left: -10px;
   padding: 20px 0 10px;
   
-  @media screen and (min-width: 768px) {
+  @media screen and (${breakpoints.tablet}) {
     width: 100%;
     display: flex;
     justify-content: center;
