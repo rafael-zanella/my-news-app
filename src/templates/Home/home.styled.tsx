@@ -1,7 +1,13 @@
 import { DefaultLayout } from '@/layouts/DefaultLayout'
 import styled from 'styled-components'
 
-export const HomeLayout = styled(DefaultLayout)``
+export const HomeLayout = styled(DefaultLayout)`
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+`
 
 export const Header = styled.header`
   grid-area: header;
