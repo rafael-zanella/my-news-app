@@ -1,4 +1,14 @@
-import { Bell, BellDefault, Bookmark, BookmarkSelected, Home, HomeSelected, Search, SearchSelected, Settings, SettingsSelected } from '@/design-system/icons'
+import {
+  Bell,
+  Bookmark,
+  BookmarkSelected,
+  Home,
+  HomeSelected,
+  Search,
+  SearchSelected,
+  Settings,
+  SettingsSelected
+} from '@/design-system/icons'
 
 interface IMenu {
   id: string,
