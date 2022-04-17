@@ -2,17 +2,14 @@ import { breakpoints } from '@/design-system/breakpoints'
 import styled from 'styled-components'
 
 export const Logo = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-
-  color: ${({ theme }) => theme.colors.onBackgroundColor};
+  display: none;
 
   @media screen and (${breakpoints.tablet}){
+    display: block;
+    
+    color: ${({ theme }) => theme.colors.onBackgroundColor};
+
     position: fixed;
     top: 40px;
-    
-    h2 { display: none } 
   }
 `

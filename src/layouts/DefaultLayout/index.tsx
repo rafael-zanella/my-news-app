@@ -6,17 +6,33 @@ export const DefaultLayout = styled.div`
   padding: 10px;
   overflow: hidden;
 
+  max-width: 100vw;
+
+  display: flex;
+  flex-direction: column;
+
   @media screen and (${breakpoints.tablet}) {
+    display: grid;
+
+    grid-template-rows: 60px 100%;
+    grid-template-columns: 1fr 7fr 1fr;
+    grid-template-areas: 
+      "nav header ."
+      "nav main ."
+      "nav main ."
+    ;
+
     position: relative;
-    display: flex;
     justify-content: center;
     margin: 0 auto;
-    max-width: 1280px;
-    padding: 0 10px;
+    max-width: 1000px;
+    padding: 20px 10px;
     
     main {
-      margin: 0 5vw;
-      max-width: 700px;
+      grid-area: main;
+      padding: 0 2vw;
+      margin: 0 auto;
+      max-width: calc(700px + 2vw);
     }
   }
 `

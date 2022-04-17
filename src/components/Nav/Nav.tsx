@@ -1,24 +1,25 @@
 import {
   Wrapper,
   Container,
-  Notification,
   Logo,
   Item,
   Menu
 } from './StyledComponents'
 import {
-  LogoDefault,
-  Bell
+  LogoDefault
 } from '@/design-system/icons'
 
 import { useTheme } from '@/Contexts/ThemeContext/ThemeContext'
-import { Typography } from '@/design-system/Typography'
 
 import { menuItems } from './Nav.constants'
 import Link from 'next/link'
-import { useState } from 'react'
+import { FC, useState } from 'react'
 
-export const Nav = () => {
+interface IProps {
+  hideLogo?: boolean
+}
+
+export const Nav: FC<IProps> = ({ hideLogo = false }) => {
   const { changeTheme, theme: { colors } } = useTheme()
 
   const [menu, setMenu] = useState(menuItems)
@@ -33,21 +34,13 @@ export const Nav = () => {
   }
 
   return (
-    <Wrapper data-testid="nav">
-      <Container>
-        <Logo>
-          <LogoDefault fill={colors.onBackgroundColor} />
-          <Typography type='h2' fontWeight={700}>My News App</Typography>
-        </Logo>
-
-        <Notification>
-          <Bell
-            width={24}
-            height={24}
-            onClick={changeTheme}
-            stroke={colors.onBackgroundColor}
-          />
-        </Notification>
+    <Wrapper >
+      <Container data-testid="nav">
+        { !hideLogo && (
+          <Logo onClick={changeTheme}>
+            <LogoDefault fill={colors.onBackgroundColor} />
+          </Logo>
+        ) }
 
         <Menu>
           {
@@ -66,7 +59,6 @@ export const Nav = () => {
             ))
           }
         </Menu>
-
       </Container>
     </Wrapper>
   )

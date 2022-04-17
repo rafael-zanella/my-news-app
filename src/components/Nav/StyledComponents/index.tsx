@@ -3,7 +3,6 @@ import styled from 'styled-components'
 
 export { Menu, Item } from './Menu'
 export { Logo } from './Logo'
-export { Notification } from './Notification'
 
 export const Container = styled.div`
   position: relative;
@@ -19,8 +18,7 @@ export const Container = styled.div`
 
   @media screen and (${breakpoints.tablet}) {
     height: 100vh;
-    width: 6em;
-    
+    width: 60px;
     display: flex;
     flex-direction: column;
     gap: 50px;
@@ -29,7 +27,7 @@ export const Container = styled.div`
 
 export const Wrapper = styled.div`
   @media screen and (${breakpoints.tablet}) {
-    position: relative;
+    position: fixed;
     border-right: 1px solid ${({ theme }) => theme.colors.complementaryColor};
   }
 `

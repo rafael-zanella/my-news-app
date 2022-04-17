@@ -1,4 +1,4 @@
-import { Bookmark, BookmarkSelected, Home, HomeSelected, Search, SearchSelected, Settings, SettingsSelected } from "@/design-system/icons";
+import { Bell, BellDefault, Bookmark, BookmarkSelected, Home, HomeSelected, Search, SearchSelected, Settings, SettingsSelected } from '@/design-system/icons'
 
 interface IMenu {
   id: string,
@@ -17,6 +17,14 @@ export const menuItems: IMenu[] = [
     isActive: false,
     Icon: Home,
     IconSelected: HomeSelected
+  },
+  {
+    id: '5',
+    title: 'Notifications',
+    href: '/',
+    isActive: false,
+    Icon: Bell,
+    IconSelected: Bell
   },
   {
     id: '2',
