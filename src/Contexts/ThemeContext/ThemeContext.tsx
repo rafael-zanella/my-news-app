@@ -10,14 +10,14 @@ type IContext = {
 }
 
 type IProvider = {
-  initialTheme: ITheme,
+  initialTheme?: 'light' | 'dark',
   children: any
 }
 
 const ThemeContext = createContext<IContext | undefined>(undefined)
 
 const ThemeContextProvider: FC<IProvider> = ({ initialTheme, children }) => {
-  const [theme, setTheme] = useState(initialTheme)
+  const [theme, setTheme] = useState(light)
 
   const changeTheme = () => {
     const nextTheme = theme.title === 'light' ? dark : light
@@ -26,8 +26,15 @@ const ThemeContextProvider: FC<IProvider> = ({ initialTheme, children }) => {
   }
 
   useEffect(() => {
-    const userTheme = localStorage.getItem('theme')
-    setTheme(userTheme === 'dark' ? dark : light)
+    if (initialTheme) {
+      setTheme(initialTheme === 'dark' ? dark : light)
+    } else {
+      const userTheme = localStorage.getItem('theme')
+
+      if (userTheme) {
+        setTheme(userTheme === 'dark' ? dark : light)
+      }
+    }
   }, [])
 
   const value = {

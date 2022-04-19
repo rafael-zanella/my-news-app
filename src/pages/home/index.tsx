@@ -1,15 +1,3 @@
-import { useTheme } from '@/Contexts/ThemeContext/ThemeContext'
-
-const Home = () => {
-  const { changeTheme } = useTheme()
-
-  return (
-    <div>
-      <h1>Home Page</h1>
-
-      <button onClick={changeTheme}>change theme</button>
-    </div>
-  )
-}
+import { Home } from '@/templates/Home'
 
 export default Home

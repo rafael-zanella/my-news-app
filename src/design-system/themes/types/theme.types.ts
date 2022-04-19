@@ -10,12 +10,4 @@ export interface ITheme {
     onComplementaryColor: string,
     onBackgroundColor: string
   }
-
-  fonts: {
-    articleTitle: string,
-    actionSheet: string,
-    imageCaption: string,
-
-    p1: string
-  }
 }
