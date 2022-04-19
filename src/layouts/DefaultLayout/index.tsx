@@ -27,6 +27,14 @@ export const DefaultLayout = styled.div`
     margin: 0 auto;
     max-width: 1000px;
     padding: 20px 10px;
+
+    header {
+      grid-area: header;
+      padding: 0 2vw;
+      max-width: calc(700px + 2vw);
+      width: 100%;
+      margin: 0 auto;
+    }
     
     main {
       grid-area: main;
