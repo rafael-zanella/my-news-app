@@ -5,8 +5,8 @@ import { IFont } from './Font.types'
 
 export const P = styled.p<IFont>`
   ${DefaultFont};
-  font: 2.5vw Roboto;
-  line-height: 4vw;
+  font: 16px Roboto;
+  line-height: 26px;
 
   ${props => props && css`
     ${{ ...props } as any}

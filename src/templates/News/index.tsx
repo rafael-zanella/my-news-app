@@ -64,21 +64,21 @@ export const News = () => {
           <Details>
             <Author>
               <img src='https://images.unsplash.com/photo-1597223557154-721c1cecc4b0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80' alt='foto do autor' />
-              <Typography type='h5' color={colors.onComplementaryColor}>By Andy Corbley</Typography>
-              <Typography type='h5' color={colors.onComplementaryColor}>1h ago</Typography>
+              <Typography type='h4' color={colors.onComplementaryColor}>By Andy Corbley</Typography>
+              <Typography type='h4' color={colors.onComplementaryColor}>1h ago</Typography>
             </Author>
 
             <Actions>
               <div><Comment stroke={colors.onBackgroundColor} />
-                <Typography type='h5'>8 comments</Typography>
+                <Typography type='h4'>8 comments</Typography>
               </div>
 
               <div><Heart stroke={colors.onBackgroundColor} />
-                <Typography type='h5'>34 likes</Typography>
+                <Typography type='h4'>34 likes</Typography>
               </div>
 
               <div><ShareNodes stroke={colors.onBackgroundColor} />
-                <Typography type='h5'>Share</Typography>
+                <Typography type='h4'>Share</Typography>
               </div>
             </Actions>
           </Details>

@@ -5,7 +5,7 @@ export const Container = styled.div`
   justify-items: start;
   justify-content: center;
   gap: 10px;
-  grid-template-columns: 140px 2fr 10px 4.5fr;
+  grid-template-columns: 120px 2fr 10px 4.5fr;
   grid-template-areas: 
     "img title title title"
     "img author author author"
@@ -24,8 +24,8 @@ export const Container = styled.div`
 
 export const Img = styled.img`
   grid-area: img;
-  width: 140px;
-  height: 140px;
+  width: 120px;
+  height: 120px;
 `
 
 export const Title = styled.div`

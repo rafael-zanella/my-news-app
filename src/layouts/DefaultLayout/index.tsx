@@ -10,7 +10,8 @@ export const DefaultLayout = styled.div`
 
   display: flex;
   flex-direction: column;
-
+  margin: 0 auto;
+  
   @media screen and (${breakpoints.tablet}) {
     display: grid;
 

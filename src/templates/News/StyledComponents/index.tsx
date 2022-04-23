@@ -22,10 +22,8 @@ export const Section = styled.section`
   flex-direction: column;
   gap: 2vw;
   width: 100%;
-  // margin-bottom: 80px;
-  @media screen and (${breakpoints.tablet}) {
-    // gap: 20px;
-  }
+
+  @media screen and (${breakpoints.tablet}) { }
 `
 
 export const Banner = styled.div`
@@ -44,6 +42,8 @@ export const Banner = styled.div`
 `
 
 export const Details = styled.section`
+  margin: 10px 0;
+
   display: grid;
   gap: 10px;
   grid-template-rows: 1fr;
