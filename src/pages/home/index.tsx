@@ -1,9 +1,3 @@
-const Home = () => {
-  return (
-    <div>
-      <h1>Home Page</h1>
-    </div>
-  )
-}
+import { Home } from '@/templates/Home'
 
 export default Home
