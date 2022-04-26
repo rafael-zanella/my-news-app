@@ -1,7 +1,7 @@
-const sizes = {
+export const sizes = {
   sm: 320,
   md: 768,
-  lg: 1366
+  lg: 1000
 }
 
 export const breakpoints = {
