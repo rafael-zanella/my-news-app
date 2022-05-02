@@ -1,6 +1,7 @@
 import { db } from '@/configs/firebase'
 import { IPost, TPostCategory } from '@/shared/types/post.types'
-import { collectionGroup, getDocs, query, where } from 'firebase/firestore'
+import { collectionGroup, doc, getDoc, getDocs, query, where } from 'firebase/firestore'
+import { findAuthorById } from './findAuthorById'
 
 interface IFindPostsParams {
   category?: TPostCategory,
@@ -13,8 +14,9 @@ interface IResponse {
 
 export const findPosts = async ({ category, title }: IFindPostsParams): Promise<IResponse> => {
   const postsRef = collectionGroup(db, 'posts')
+
   const queryConstraints = []
-  const posts: IPost[] = []
+  const postsFromDB: any = []
 
   if (category) queryConstraints.push(where('category', '==', `${category}`))
   if (title) queryConstraints.push(where('title', '>=', `${title}`), where('title', '<=', `${title}\uf8ff`))
@@ -22,12 +24,22 @@ export const findPosts = async ({ category, title }: IFindPostsParams): Promise<
   const postsQuery = query(postsRef, ...queryConstraints)
   const querySnapshot = await getDocs(postsQuery)
 
-  querySnapshot.forEach(doc => {
-    posts.push({
+  querySnapshot.forEach(async (doc) => {
+    const data = doc.data()
+
+    postsFromDB.push({
       id: doc.id,
-      ...doc.data()
-    } as IPost)
+      ...data
+    })
   })
 
-  return { posts }
+  const postsWithAuthor = await Promise.all(postsFromDB.map(async (post: any) => {
+    const author = await findAuthorById(post.authorRef)
+    return {
+      ...post,
+      ...author
+    }
+  }))
+
+  return { posts: postsWithAuthor }
 }

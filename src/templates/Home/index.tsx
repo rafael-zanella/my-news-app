@@ -49,7 +49,7 @@ export const Home: FC<IHome> = ({ posts = [], onChangeCategory }) => {
                     imgUrl={item.card.imgUrl}
                     imgAlt={item.card.imgAlt}
                     title={item.title}
-                    author={item.author}
+                    author={item.author.name}
                     category={item.category}
                     date={item.createdAt}
                   />

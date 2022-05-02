@@ -6,7 +6,6 @@ import nProgress from 'nprogress'
 
 export async function getStaticProps () {
   const posts = await findPosts({})
-
   return {
     props: {
       ...posts

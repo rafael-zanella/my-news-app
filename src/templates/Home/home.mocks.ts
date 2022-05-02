@@ -12,7 +12,10 @@ export const mockNews: IPost[] = [
       imgAlt: ''
     },
     title: 'Monarch population soars 4,900 percent since last year in thrilling 2021 western migration',
-    author: 'Rafael Zanella',
+    author: {
+      name: 'Rafael Zanella',
+      picture: ''
+    },
     category: 'Technology',
     createdAt: '2022-04-02',
     updatedAt: '',
@@ -31,7 +34,10 @@ export const mockNews: IPost[] = [
       imgAlt: ''
     },
     title: 'The Horrifying Star Wars Holidays Special Has Been Given An Unofficial 4K Upgrade',
-    author: 'John Doe',
+    author: {
+      name: 'John Doe',
+      picture: ''
+    },
     category: 'Business',
     createdAt: '2022-04-02',
     updatedAt: '',
@@ -50,7 +56,10 @@ export const mockNews: IPost[] = [
       imgAlt: ''
     },
     title: 'The Horrifying Star Wars Holidays Special Has Been Given An Unofficial 4K Upgrade',
-    author: 'John Doe',
+    author: {
+      name: 'John Doe',
+      picture: ''
+    },
     category: 'Entertainment',
     createdAt: '2022-04-02',
     updatedAt: '',
@@ -69,7 +78,10 @@ export const mockNews: IPost[] = [
       imgAlt: ''
     },
     title: 'The Horrifying Star Wars Holidays Special Has Been Given An Unofficial 4K Upgrade',
-    author: 'John Doe',
+    author: {
+      name: 'John Doe',
+      picture: ''
+    },
     category: 'Science',
     createdAt: '2022-04-02',
     updatedAt: '',
@@ -88,7 +100,10 @@ export const mockNews: IPost[] = [
       imgAlt: ''
     },
     title: 'The Horrifying Star Wars Holidays Special Has Been Given An Unofficial 4K Upgrade',
-    author: 'John Doe',
+    author: {
+      name: 'John Doe',
+      picture: ''
+    },
     category: 'Science',
     createdAt: '2022-04-02',
     updatedAt: '',
@@ -107,7 +122,10 @@ export const mockNews: IPost[] = [
       imgAlt: ''
     },
     title: 'The Horrifying Star Wars Holidays Special Has Been Given An Unofficial 4K Upgrade',
-    author: 'John Doe',
+    author: {
+      name: 'John Doe',
+      picture: ''
+    },
     category: 'Science',
     createdAt: '2022-04-02',
     updatedAt: '',

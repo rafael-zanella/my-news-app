@@ -10,7 +10,10 @@ export type TPostCategory =
 export interface IPost {
   id: string,
   title: string,
-  author: string,
+  author: {
+    name: string,
+    picture: string,
+  }
   category: TPostCategory,
   article: string,
   createdAt: string,

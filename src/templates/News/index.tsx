@@ -12,9 +12,14 @@ import { Header } from '@/components/Header/Header'
 import { Nav } from '@/components/Nav/Nav'
 import { Actions, Author, Banner, Details, NewsLayout, ScrollBackToTopButton, Section } from './StyledComponents'
 import { useTheme } from '@/Contexts/ThemeContext/ThemeContext'
-import { useEffect, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
+import { IPost } from '@/shared/types/post.types'
 
-export const News = () => {
+interface INews {
+  post: IPost
+}
+
+export const News: FC<INews> = ({ post }) => {
   const { back } = useRouter()
   const { theme: { colors } } = useTheme()
 
@@ -24,7 +29,7 @@ export const News = () => {
     const scrolled = document.documentElement.scrollTop
     if (scrolled > 10) {
       setVisible(true)
-    } else if (scrolled <= 10) {
+    } else {
       setVisible(false)
     }
   }
@@ -52,17 +57,17 @@ export const News = () => {
       <main>
         <Section>
           <Banner data-testid="news_banner">
-            <img src='https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80' alt='meu alt' />
+            <img src={post?.banner?.imgUrl} alt={post?.banner?.imgAlt} />
           </Banner>
 
           <Typography type='h1' fontWeight={700} data-testid="news_title" >
-            Monarch population soars 4,900 percent since last year in thrilling 2021 western migration
+            {post.title}
           </Typography>
 
           <Details data-testid="news_details">
             <Author>
-              <img src='https://images.unsplash.com/photo-1597223557154-721c1cecc4b0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80' alt='foto do autor' />
-              <Typography type='h4' color={colors.onComplementaryColor}>By Andy Corbley</Typography>
+              <img src={post.author.picture} alt={`foto do autor ${post.author.name}`} />
+              <Typography type='h4' color={colors.onComplementaryColor}>By {post?.author?.name}</Typography>
               <Typography type='h4' color={colors.onComplementaryColor}>1h ago</Typography>
             </Author>
 
@@ -82,9 +87,7 @@ export const News = () => {
           </Details>
 
           <article data-testid="news_article">
-            <Typography type='p'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sit amet diam mi. Donec scelerisque semper pellentesque. Nunc quis efficitur metus, ac ullamcorper urna. Quisque porta iaculis sem, lacinia dictum sem mattis in. Phasellus massa purus, vestibulum eu erat id, vulputate porttitor magna. Integer lectus sapien, pulvinar a elit in, accumsan malesuada sem. Integer commodo arcu ac varius laoreet. Maecenas dapibus eros risus, a cursus urna maximus id. Phasellus quis porttitor mauris, id consectetur enim. Donec ut venenatis felis. Pellentesque id mollis diam. Sed lorem tortor, bibendum et pellentesque tristique, porta vitae justo.</Typography>
-            <wbr/>
-            <Typography type='p'>Aenean orci elit, pellentesque vel nibh at, vulputate rutrum enim. Ut mollis nulla enim, cursus porta ante convallis quis. Ut ultricies, metus vitae semper blandit, nulla magna bibendum erat, at pharetra odio velit nec est. Vivamus tortor leo, iaculis a imperdiet quis, venenatis sit amet enim. Etiam magna nisl, mollis quis ullamcorper ut, sodales eu orci. Nam et commodo sem. Morbi turpis lacus, pretium in vehicula a, laoreet non risus. Pellentesque lacus ante, pharetra eu blandit at, feugiat in nisl. Maecenas feugiat tortor turpis, ac imperdiet sapien cursus eu. Nullam congue felis nisl, ullamcorper vestibulum quam aliquet at. Quisque tellus risus, dapibus sed lectus ac, consectetur laoreet dui. Donec malesuada laoreet ligula, sit amet ullamcorper tortor varius non.</Typography>
+            <Typography type='p'>{post?.article}</Typography>
           </article>
 
           <ScrollBackToTopButton visible={visible} onClick={scrollToTop} data-testid="news_scrollBackToTopButton">
