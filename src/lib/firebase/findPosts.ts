@@ -1,6 +1,6 @@
 import { db } from '@/configs/firebase'
 import { IPost, TPostCategory } from '@/shared/types/post.types'
-import { collectionGroup, doc, getDoc, getDocs, query, where } from 'firebase/firestore'
+import { collectionGroup, getDocs, query, where } from 'firebase/firestore'
 import { findAuthorById } from './findAuthorById'
 
 interface IFindPostsParams {
