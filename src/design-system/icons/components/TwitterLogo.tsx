@@ -1,4 +1,3 @@
-import * as React from 'react'
 import { SVGProps } from 'react'
 
 export const TwitterLogo = (props: SVGProps<SVGSVGElement>) => (
@@ -31,3 +30,5 @@ export const TwitterLogo = (props: SVGProps<SVGSVGElement>) => (
     </defs>
   </svg>
 )
+
+export default TwitterLogo

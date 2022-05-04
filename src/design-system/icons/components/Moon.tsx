@@ -1,4 +1,3 @@
-import * as React from 'react'
 import { SVGProps } from 'react'
 
 export const Moon = (props: SVGProps<SVGSVGElement>) => (
@@ -26,3 +25,5 @@ export const Moon = (props: SVGProps<SVGSVGElement>) => (
     </defs>
   </svg>
 )
+
+export default Moon

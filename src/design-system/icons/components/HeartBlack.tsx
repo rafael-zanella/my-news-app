@@ -1,4 +1,3 @@
-import * as React from 'react'
 import { SVGProps } from 'react'
 
 export const HeartBlack = (props: SVGProps<SVGSVGElement>) => (
@@ -20,3 +19,5 @@ export const HeartBlack = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 )
+
+export default HeartBlack

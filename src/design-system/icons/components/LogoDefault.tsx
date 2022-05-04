@@ -25,3 +25,5 @@ export const LogoDefault = (props: SVGProps<SVGSVGElement>) => (
     </defs>
   </svg>
 )
+
+export default LogoDefault

@@ -1,4 +1,3 @@
-import * as React from 'react'
 import { SVGProps } from 'react'
 
 export const Heart = (props: SVGProps<SVGSVGElement>) => (
@@ -7,6 +6,7 @@ export const Heart = (props: SVGProps<SVGSVGElement>) => (
     height={17}
     viewBox="0 0 20 17"
     fill="none"
+    stroke="#180E19"
     xmlns="http://www.w3.org/2000/svg"
     {...props}
   >
@@ -18,3 +18,5 @@ export const Heart = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 )
+
+export default Heart

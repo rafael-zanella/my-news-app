@@ -7,6 +7,7 @@ export const ChevronLeft = (props: SVGProps<SVGSVGElement>) => (
     height={24}
     viewBox="0 0 24 24"
     fill="none"
+    stroke="#180E19"
     xmlns="http://www.w3.org/2000/svg"
     {...props}
   >
@@ -18,3 +19,5 @@ export const ChevronLeft = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 )
+
+export default ChevronLeft

@@ -1,4 +1,3 @@
-import * as React from 'react'
 import { SVGProps } from 'react'
 
 export const CircleArrowUp = (props: SVGProps<SVGSVGElement>) => (
@@ -34,3 +33,5 @@ export const CircleArrowUp = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 )
+
+export default CircleArrowUp
