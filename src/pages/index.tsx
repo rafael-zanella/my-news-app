@@ -4,7 +4,7 @@ import { IPost, TPostCategory } from '@/shared/types/post.types'
 import { findPosts } from '@/lib/firebase/findPosts'
 import nProgress from 'nprogress'
 
-export async function getStaticProps () {
+export async function getServerSideProps () {
   const posts = await findPosts({})
   return {
     props: {

@@ -10,7 +10,7 @@ export const P = styled.p<IFont>`
 
   ${props => props && css`
     ${{ ...props } as any}
-  `}
+  `};
 
   @media screen and (${breakpoints.tablet}) {
     font-size: 18px;

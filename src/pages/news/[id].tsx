@@ -15,7 +15,8 @@ export const getStaticProps = async ({ params }: { params: { id: string }}) => {
   return {
     props: {
       post: data?.post
-    }
+    },
+    revalidate: 10
   }
 }
 
@@ -23,9 +24,9 @@ export async function getStaticPaths () {
   const { posts } = await findPosts({})
   const paths = posts.map((post) => ({
     params: { id: post.id }
-  }))
+  })) || []
 
-  return { paths, fallback: false }
+  return { paths, fallback: 'blocking' }
 }
 
 const News = (props: { post: IPost}) => {
