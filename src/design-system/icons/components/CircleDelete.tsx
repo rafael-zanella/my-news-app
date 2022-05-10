@@ -33,3 +33,5 @@ export const CircleDelete = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 )
+
+export default CircleDelete

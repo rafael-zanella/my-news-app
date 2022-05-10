@@ -1,14 +1,6 @@
-export type TCategory =
-  | 'All'
-  | 'World'
-  | 'Politics'
-  | 'Technology'
-  | 'Science'
-  | 'Business'
-  | 'Entertainment'
-  | 'Food'
+import { TPostCategory } from '@/shared/types/post.types'
 
 export interface IProps {
-  defaultValue: TCategory,
-  onChange: (value: string) => void,
+  defaultValue: TPostCategory | 'All',
+  onChange: (value: TPostCategory) => void,
 }

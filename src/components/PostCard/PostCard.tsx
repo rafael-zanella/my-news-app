@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { TCategory } from '../Categories/Categories.types'
+import { TPostCategory } from '@/shared/types/post.types'
 import { Typography } from '@/design-system/Typography'
 import {
   Container,
@@ -14,18 +14,18 @@ import {
 } from './PostCard.styled'
 
 interface IProps {
-  img: string,
+  imgUrl: string,
   imgAlt: string,
   title: string,
   author: string,
-  category: TCategory,
+  category: TPostCategory,
   date: string,
 }
 
 export const PostCard: FC<IProps> = (props) => {
   return (
     <Container data-testid="postcard">
-      <Img src={props.img} alt={props.imgAlt} />
+      <Img src={props.imgUrl} alt={props.imgAlt} />
       <Title>
         <Typography type='h3' fontWeight={700}>{props.title}</Typography>
       </Title>

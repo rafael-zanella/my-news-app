@@ -1,4 +1,3 @@
-import * as React from 'react'
 import { SVGProps } from 'react'
 
 export const Ellipsis = (props: SVGProps<SVGSVGElement>) => (
@@ -24,3 +23,5 @@ export const Ellipsis = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 )
+
+export default Ellipsis

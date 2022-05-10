@@ -1,4 +1,3 @@
-import * as React from 'react'
 import { SVGProps } from 'react'
 
 export const Flag = (props: SVGProps<SVGSVGElement>) => (
@@ -26,3 +25,5 @@ export const Flag = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 )
+
+export default Flag

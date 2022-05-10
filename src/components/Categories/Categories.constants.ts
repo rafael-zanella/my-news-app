@@ -1,7 +1,6 @@
-import { TCategory } from './Categories.types'
+import { TPostCategory } from '@/shared/types/post.types'
 
-export const Categories: Array<TCategory> = [
-  'All',
+export const Categories: Array<TPostCategory> = [
   'World',
   'Politics',
   'Technology',
