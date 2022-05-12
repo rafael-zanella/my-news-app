@@ -33,7 +33,7 @@ function MyApp ({ Component, pageProps }: AppProps) {
         <meta name='msapplication-config' content='/icons/browserconfig.xml' />
         <meta name='msapplication-TileColor' content='#2B5797' />
         <meta name='msapplication-tap-highlight' content='no' />
-        <meta name='theme-color' content='#000000' />
+        <meta name='theme-color' content='#FFFFFF' />
 
         <link rel='manifest' href='/manifest.json' />
         <link rel='shortcut icon' href='/favicon.ico' />
@@ -57,16 +57,16 @@ function MyApp ({ Component, pageProps }: AppProps) {
 
         <meta name='twitter:card' content='summary' />
         <meta name='twitter:url' content='https://my-news-app-tcc.vercel.app/' />
-        <meta name='twitter:title' content='PWA App' />
-        <meta name='twitter:description' content='Best PWA App in the world' />
-        <meta name='twitter:image' content='https://yourdomain.com/icons/android-chrome-192x192.png' />
-        <meta name='twitter:creator' content='@DavidWShadow' />
+        <meta name='twitter:title' content='My News App' />
+        <meta name='twitter:description' content='App de Notícias' />
+        <meta name='twitter:image' content='/icons/android/android-icon-192x192.png' />
+        <meta name='twitter:creator' content='' />
         <meta property='og:type' content='website' />
         <meta property='og:title' content='My News App' />
         <meta property='og:description' content='My News App' />
         <meta property='og:site_name' content='My News App' />
         <meta property='og:url' content='https://my-news-app-tcc.vercel.app/' />
-        <meta property='og:image' content='/icons/apple/apple-touch-icon.png' />
+        <meta property='og:image' content='/icons/apple/apple-icon-180x180.png' />
 
         <title>My News App</title>
       </Head>
