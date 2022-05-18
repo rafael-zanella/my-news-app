@@ -1,5 +1,5 @@
 const withPWA = require('next-pwa')
-const runtimeCaching = require('next-pwa/cache')
+const customRuntimeCaching = require('./customRuntimeCaching')
 
 const nextConfig = {
   reactStrictMode: true,
@@ -15,7 +15,12 @@ const nextConfig = {
     disable: process.env.NODE_ENV === 'development',
     dest: 'public',
     cacheOnFrontEndNav: true,
-    runtimeCaching
+    runtimeCaching: customRuntimeCaching,
+    // swSrc: './service-worker.js'
+    publicExcludes: [
+      '!icons/**/*'
+    ],
+    buildExcludes: [/chunks\/images\/.*$/]
   },
 
   async redirects () {
