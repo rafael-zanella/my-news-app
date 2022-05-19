@@ -41,7 +41,7 @@ module.exports = [
     options: {
       cacheName: 'static-image-assets',
       expiration: {
-        maxEntries: 2,
+        maxEntries: 4,
         maxAgeSeconds: 24 * 60 * 60 // 24 hours
       }
     }
@@ -109,7 +109,7 @@ module.exports = [
     options: {
       cacheName: 'next-data',
       expiration: {
-        maxEntries: 32,
+        maxEntries: 32, // check consumption
         maxAgeSeconds: 24 * 60 * 60 // 24 hours
       }
     }
