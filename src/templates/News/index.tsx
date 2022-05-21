@@ -14,6 +14,7 @@ import { Actions, Author, Banner, Details, NewsLayout, ScrollBackToTopButton, Se
 import { useTheme } from '@/Contexts/ThemeContext/ThemeContext'
 import { FC, useEffect, useState } from 'react'
 import { IPost } from '@/shared/types/post.types'
+import HtmlMapper from 'react-html-map'
 
 interface INews {
   post: IPost
@@ -87,7 +88,9 @@ export const News: FC<INews> = ({ post }) => {
           </Details>
 
           <article data-testid="news_article">
-            <Typography type='p'>{post?.article}</Typography>
+            <HtmlMapper html={post?.article} decodeEntities={undefined}>
+              {{ p: ({ ...props }) => <Typography type='p' {...props} /> }}
+            </HtmlMapper>
           </article>
 
           <ScrollBackToTopButton visible={visible} onClick={scrollToTop} data-testid="news_scrollBackToTopButton">
