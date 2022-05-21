@@ -1,4 +1,3 @@
-import * as React from 'react'
 import { SVGProps } from 'react'
 
 export const Eye = (props: SVGProps<SVGSVGElement>) => (
@@ -68,3 +67,5 @@ export const Eye = (props: SVGProps<SVGSVGElement>) => (
     </defs>
   </svg>
 )
+
+export default Eye

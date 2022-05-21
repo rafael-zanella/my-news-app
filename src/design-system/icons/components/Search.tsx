@@ -24,3 +24,5 @@ export const Search = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 )
+
+export default Search

@@ -18,3 +18,5 @@ export const Home = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 )
+
+export default Home

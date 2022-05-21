@@ -1,4 +1,3 @@
-import * as React from 'react'
 import { SVGProps } from 'react'
 
 export const FacebookLogo = (props: SVGProps<SVGSVGElement>) => (
@@ -36,3 +35,5 @@ export const FacebookLogo = (props: SVGProps<SVGSVGElement>) => (
     </defs>
   </svg>
 )
+
+export default FacebookLogo

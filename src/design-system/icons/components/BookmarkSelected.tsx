@@ -16,3 +16,5 @@ export const BookmarkSelected = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 )
+
+export default BookmarkSelected

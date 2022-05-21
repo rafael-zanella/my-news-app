@@ -1,4 +1,3 @@
-import * as React from 'react'
 import { SVGProps } from 'react'
 
 export const ArrowUpFromBracket = (props: SVGProps<SVGSVGElement>) => (
@@ -7,6 +6,7 @@ export const ArrowUpFromBracket = (props: SVGProps<SVGSVGElement>) => (
     height={24}
     viewBox="0 0 24 24"
     fill="none"
+    stroke="#180E19"
     xmlns="http://www.w3.org/2000/svg"
     {...props}
   >
@@ -30,3 +30,5 @@ export const ArrowUpFromBracket = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 )
+
+export default ArrowUpFromBracket

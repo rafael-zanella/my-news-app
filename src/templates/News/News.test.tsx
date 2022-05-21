@@ -1,11 +1,12 @@
 import { ThemeContextProvider } from '@/Contexts/ThemeContext/ThemeContext'
 import { render, screen } from '@testing-library/react'
 import { News } from '.'
+import { mockPost } from './news.mocks'
 
 const renderComponent = () => (
   render(
     <ThemeContextProvider>
-      <News />
+      <News post={mockPost} />
     </ThemeContextProvider>
   )
 )

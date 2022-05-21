@@ -18,7 +18,7 @@ export const Container = styled.div`
   position: relative ;
   display: flex;
   width: 100vw;
-  left: -10px;
+  left: -20px;
   padding: 20px 0 10px;
   
   @media screen and (${breakpoints.tablet}) {
@@ -37,10 +37,10 @@ export const Container = styled.div`
 
 export const Item = styled.div`
   :first-child {
-    margin-left: 10px;
+    margin-left: 20px;
   }
   :last-child {
-    margin-right: 10px;
+    margin-right: 20px;
   }
 `
 

@@ -1,4 +1,3 @@
-import * as React from 'react'
 import { SVGProps } from 'react'
 
 export const BellOn = (props: SVGProps<SVGSVGElement>) => (
@@ -27,3 +26,5 @@ export const BellOn = (props: SVGProps<SVGSVGElement>) => (
     <circle cx={17.5} cy={3.5} r={3} fill="#FE3B30" stroke="white" />
   </svg>
 )
+
+export default BellOn

@@ -1,11 +1,14 @@
 import { ThemeContextProvider } from '@/Contexts/ThemeContext/ThemeContext'
-import { render, screen } from '@testing-library/react'
+import { fireEvent, render, screen } from '@testing-library/react'
 import { Home } from '.'
+import { mockNews } from './home.mocks'
+
+const onChangeCategory = jest.fn()
 
 const renderComponent = () => (
   render(
     <ThemeContextProvider>
-      <Home />
+      <Home posts={mockNews} onChangeCategory={onChangeCategory} />
     </ThemeContextProvider>
   )
 )
@@ -29,5 +32,23 @@ describe('Home', () => {
   it('should render the posts', () => {
     renderComponent()
     screen.getAllByTestId('postcard')
+  })
+
+  it('should render msg when there have no post', () => {
+    render(
+      <ThemeContextProvider>
+        <Home posts={[]} onChangeCategory={onChangeCategory} />
+      </ThemeContextProvider>
+    )
+    screen.getByText('Nenhuma notícia encontrada!')
+  })
+
+  it('should call onChangeCategory callback', () => {
+    renderComponent()
+
+    const item: HTMLInputElement = screen.getByLabelText('World')
+    fireEvent.click(item)
+
+    expect(onChangeCategory).toHaveBeenCalledTimes(1)
   })
 })

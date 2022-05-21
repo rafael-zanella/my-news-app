@@ -38,7 +38,6 @@ const getTheme = (themeName) => {
 
 const withThemeProvider=(Story, context)=>{
   const theme = getTheme(context.globals.theme)
-  console.log(theme)
   return (
     <ThemeContextProvider initialTheme={context.globals.theme}>
       {/* Need to improve this code */}

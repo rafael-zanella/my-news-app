@@ -1,4 +1,3 @@
-import * as React from 'react'
 import { SVGProps } from 'react'
 
 export const Lock = (props: SVGProps<SVGSVGElement>) => (
@@ -33,3 +32,5 @@ export const Lock = (props: SVGProps<SVGSVGElement>) => (
     </defs>
   </svg>
 )
+
+export default Lock
