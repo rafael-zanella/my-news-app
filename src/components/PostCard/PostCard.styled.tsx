@@ -26,6 +26,7 @@ export const Img = styled.img`
   grid-area: img;
   width: 120px;
   height: 120px;
+  border-radius: 8px;
 `
 
 export const Title = styled.div`

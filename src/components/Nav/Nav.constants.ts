@@ -23,7 +23,7 @@ export const menuItems: IMenu[] = [
   {
     id: '1',
     title: 'Home',
-    href: '/home',
+    href: '/',
     isActive: false,
     Icon: Home,
     IconSelected: HomeSelected
