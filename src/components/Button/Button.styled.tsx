@@ -1,12 +1,17 @@
 import styled from 'styled-components'
 
-export const Container = styled.div`
-  width: 200px;
-  height: 20px;
+interface IProps {
+  background?: string;
+}
+
+export const Container = styled.div<IProps>`
+  display: flex;
+    justify-content: end;
   cursor: pointer;
 
   button {
-    background-color: #eb8989;
+    background-color: ${props => props.theme.colors.onBackgroundColor};
+    color: ${props => props.theme.colors.backgroundColor};
     border: none;
     border-radius: 8px;
     padding: 10px 20px;
