@@ -1,6 +1,6 @@
 import { db } from '@/configs/firebase'
 import { IPost, TPostCategory } from '@/shared/types/post.types'
-import { collectionGroup, getDocs, query, where } from 'firebase/firestore'
+import { collectionGroup, getDocs, orderBy, query, where } from 'firebase/firestore'
 import { findAuthorById } from './findAuthorById'
 
 interface IFindPostsParams {
@@ -21,7 +21,7 @@ export const findPosts = async ({ category, title }: IFindPostsParams): Promise<
   if (category) queryConstraints.push(where('category', '==', `${category}`))
   if (title) queryConstraints.push(where('title', '>=', `${title}`), where('title', '<=', `${title}\uf8ff`))
 
-  const postsQuery = query(postsRef, ...queryConstraints)
+  const postsQuery = query(postsRef, ...queryConstraints, orderBy('createdAt', 'desc'))
   const querySnapshot = await getDocs(postsQuery)
 
   querySnapshot.forEach(async (doc) => {
