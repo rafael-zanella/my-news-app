@@ -13,7 +13,8 @@ import { useTheme } from '@/Contexts/ThemeContext/ThemeContext'
 
 import { menuItems } from './Nav.constants'
 import Link from 'next/link'
-import { FC, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
 
 interface IProps {
   hideLogo?: boolean
@@ -21,17 +22,21 @@ interface IProps {
 
 export const Nav: FC<IProps> = ({ hideLogo = false }) => {
   const { changeTheme, theme: { colors } } = useTheme()
-
+  const { route } = useRouter()
   const [menu, setMenu] = useState(menuItems)
 
-  const updateMenu = (selectedItemId: string) => {
+  const updateMenu = () => {
     const newMenu = menu.map(item => ({
       ...item,
-      isActive: item.id === selectedItemId
+      isActive: item.href === route
     }))
 
     setMenu(newMenu)
   }
+
+  useEffect(() => {
+    updateMenu()
+  }, [])
 
   return (
     <Wrapper >
@@ -45,7 +50,7 @@ export const Nav: FC<IProps> = ({ hideLogo = false }) => {
         <Menu>
           {
             menu.map(item => (
-              <Item key={item.title} onClick={() => updateMenu(item.id)}>
+              <Item key={item.title} onClick={() => updateMenu()}>
                 <Link href={item.href}>
                   <div>
                     {
