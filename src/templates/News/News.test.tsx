@@ -13,7 +13,7 @@ const renderComponent = () => (
 
 describe('News', () => {
   const useRouter = jest.spyOn(require('next/router'), 'useRouter')
-  useRouter.mockImplementationOnce(() => ({
+  useRouter.mockImplementation(() => ({
     back: jest.fn()
   }))
 

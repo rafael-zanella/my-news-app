@@ -11,7 +11,6 @@ import {
 } from '@/design-system/icons'
 
 interface IMenu {
-  id: string,
   title: string,
   href: string,
   isActive: boolean,
@@ -21,7 +20,6 @@ interface IMenu {
 
 export const menuItems: IMenu[] = [
   {
-    id: '1',
     title: 'Home',
     href: '/',
     isActive: false,
@@ -29,33 +27,29 @@ export const menuItems: IMenu[] = [
     IconSelected: HomeSelected
   },
   {
-    id: '5',
     title: 'Notifications',
-    href: '/',
+    href: '/notifications',
     isActive: false,
     Icon: Bell,
     IconSelected: Bell
   },
   {
-    id: '2',
     title: 'Search',
-    href: '/',
+    href: '/search',
     isActive: false,
     Icon: Search,
     IconSelected: SearchSelected
   },
   {
-    id: '3',
     title: 'Bookmark',
-    href: '/',
+    href: '/bookmark',
     isActive: false,
     Icon: Bookmark,
     IconSelected: BookmarkSelected
   },
   {
-    id: '4',
     title: 'Settings',
-    href: '/',
+    href: '/settings',
     isActive: false,
     Icon: Settings,
     IconSelected: SettingsSelected
