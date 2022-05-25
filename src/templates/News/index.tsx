@@ -69,7 +69,7 @@ export const News: FC<INews> = ({ post }) => {
             <Author>
               <img src={post.author.picture} alt={`foto do autor ${post.author.name}`} />
               <Typography type='h4' color={colors.onComplementaryColor}>By {post?.author?.name}</Typography>
-              <Typography type='h4' color={colors.onComplementaryColor}>1h ago</Typography>
+              <Typography type='h4' color={colors.onComplementaryColor}>{post.createdAt}</Typography>
             </Author>
 
             <Actions>

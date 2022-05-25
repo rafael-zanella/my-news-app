@@ -10,6 +10,11 @@ const renderComponent = () => (
   )
 )
 
+const useRouter = jest.spyOn(require('next/router'), 'useRouter')
+useRouter.mockImplementation(() => ({
+  route: '/'
+}))
+
 describe('Nav', () => {
   it('should render the component', () => {
     renderComponent()
