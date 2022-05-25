@@ -28,9 +28,7 @@ const Home = (props: { posts: IPost[]}) => {
     nProgress.done()
   }
 
-  return <Dashboard />
-  // return <Login setIsAuth={setIsAuth} />
-  // return <HomeTemplate posts={posts} onChangeCategory={onChangeCategory} />
+  return <HomeTemplate posts={posts} onChangeCategory={onChangeCategory} />
 }
 
 export default Home
