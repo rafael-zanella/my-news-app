@@ -1,5 +1,4 @@
 import { Home as HomeTemplate } from '@/templates/Home'
-import { Dashboard } from '@/templates/Dashboard'
 import { useEffect, useState } from 'react'
 import { IPost, TPostCategory } from '@/shared/types/post.types'
 import { findPosts } from '@/lib/firebase/findPosts'

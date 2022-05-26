@@ -1,15 +1,15 @@
 import { Dashboard as DashboardTemplate } from '@/templates/Dashboard'
 import { useRouter } from 'next/router';
-import { useLayoutEffect } from 'react';
+import { useEffect } from 'react';
 
 const Dashboard = () => {
   let router = useRouter();
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     let token = sessionStorage.getItem('Token')
 
     if(!token) {
-      router.push('/register')
+      router.push('/login')
     }
   }, [])
 

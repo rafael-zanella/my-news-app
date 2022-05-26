@@ -4,7 +4,7 @@ import { Container } from './Button.styled'
 interface IProps {
   label: string,
   background?: string,
-  onClick: () => {},
+  onClick: any,
 }
 
 export const Button: FC<IProps> = ({ label, background, onClick }) => {

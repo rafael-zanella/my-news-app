@@ -6,7 +6,7 @@ interface IProps {
 
 export const Container = styled.div<IProps>`
   display: flex;
-    justify-content: end;
+  justify-content: center;
   cursor: pointer;
 
   button {

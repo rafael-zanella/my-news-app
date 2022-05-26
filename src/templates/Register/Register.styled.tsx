@@ -4,30 +4,9 @@ export const Container = styled.div`
   padding: 0 2rem;
 `;
 
-export const Main = styled.main`
-  min-height: 100vh;
-  padding: 4rem 0;
-  flex: 1;
+export const GoogleContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  align-items: center;
+  margin: 20px 0;
 `;
-
-export const InputBox = styled.input`
-  width: 200px;
-  height: 30px;
-  margin: 5px;
-`;
-
-export const Button = styled.button`
-  width: 100px;
-  height: 30px;
-  cursor: pointer;
-`;
-
-export const Flex = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 10px;
-`
