@@ -16,6 +16,20 @@ export const Div = styled.div`
   margin-top: 90px;
 `;
 
+export const Main = styled.div`
+  margin: 80px 80px 0 150px;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+`;
+
+export const Lista = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-bottom: 40px;
+`;
+
 export const Input = styled.input`
   width: 100%;
   margin: 8px 0;

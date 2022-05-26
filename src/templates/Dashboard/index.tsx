@@ -1,6 +1,6 @@
 import { Header, HomeLayout, Logo } from "../Home/home.styled";
-import { Div, Input, Textarea, Select } from "./Dashboard.styled";
-import { InputBox, Main, Button, Flex } from "../Register/Register.styled";
+import { Div, Input, Textarea, Select, Main, Lista } from "./Dashboard.styled";
+import { InputBox, Button, Flex } from "../Register/Register.styled";
 // import { mockNews } from './home.mocks'
 import { Nav } from "@/components/Nav/Nav";
 import { Typography } from "@/design-system/Typography";
@@ -8,7 +8,14 @@ import { LogoDefault } from "@/design-system/icons";
 import { useTheme } from "@/Contexts/ThemeContext/ThemeContext";
 import { useEffect, useState } from "react";
 // import { Button } from "@/components/Button/Button";
-import { addDoc, getDocs, collection, updateDoc, doc, deleteDoc } from "firebase/firestore";
+import {
+  addDoc,
+  getDocs,
+  collection,
+  updateDoc,
+  doc,
+  deleteDoc,
+} from "firebase/firestore";
 import { db, storage } from "../../configs/firebase";
 import { ref, uploadBytes } from "firebase/storage";
 import { useRouter } from "next/router";
@@ -19,7 +26,7 @@ export const Dashboard = () => {
     changeTheme,
   } = useTheme();
 
-  const [postID, setPostID] = useState('');
+  const [postID, setPostID] = useState("");
   const [title, setTitle] = useState("");
   const [postText, setPostText] = useState("");
   const [fireData, setFireData] = useState([]);
@@ -45,7 +52,7 @@ export const Dashboard = () => {
     })
       .then(() => {
         alert("Data Sent");
-        getData()
+        getData();
         setTitle("");
         setPostText("");
       })
@@ -64,50 +71,51 @@ export const Dashboard = () => {
     });
   };
 
-  // const getID = (id, title, postText) => {
-  //   setPostID(id);
-  //   setTitle(title);
-  //   setPostText(postText);
-  //   setIsUpdate(true);
-  // };
+  const getID = (id, title, postText) => {
+    setPostID(id);
+    setTitle(title);
+    setPostText(postText);
+    setIsUpdate(true);
+  };
 
-  // const updateFields = (postID: string) => {
-  //   let fieldToEdit = doc(db, "CRUD Data", postID);
-  //   updateDoc(fieldToEdit, {
-  //     title,
-  //     postText,
-  //   })
-  //     .then(() => {
-  //       alert("Data Updated");
-  //       getData();
-  //       setTitle("");
-  //       setPostText("");
-  //       setIsUpdate(false);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
+  const updateFields = () => {
+    let fieldToEdit = doc(db, "CRUD Data", postID);
+
+    updateDoc(fieldToEdit, {
+      title,
+      postText,
+    })
+      .then(() => {
+        alert("Data Update");
+        setTitle("");
+        setPostText("");
+        setIsUpdate(false)
+        getData();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   const deleteDocument = (id) => {
-    let fieldToEdit = doc(db, 'CRUD Data', id);
+    let fieldToEdit = doc(db, "CRUD Data", id);
     deleteDoc(fieldToEdit)
-    .then(() => {
-      alert('Data Deleted')
-      getData()
-    })
-    .catch((err) => {
-      alert('Cannot Delete that field..')
-    })
-  }
+      .then(() => {
+        alert("Data Deleted");
+        getData();
+      })
+      .catch((err) => {
+        alert("Cannot Delete that field..");
+      });
+  };
 
   const logout = () => {
-    sessionStorage.removeItem('Token')
-    router.push('/')
-  }
+    sessionStorage.removeItem("Token");
+    router.push("/");
+  };
 
   return (
-    <HomeLayout data-testid="home">
+    <div data-testid="home">
       <Header>
         <Logo>
           <LogoDefault fill={colors.onBackgroundColor} onClick={changeTheme} />
@@ -119,53 +127,56 @@ export const Dashboard = () => {
       </Header>
 
       <Main>
-        <InputBox
-          placeholder="Name"
-          type="text"
-          value={title}
-          onChange={(event) => {
-            setTitle(event.target.value);
-          }}
-        />
-        <Textarea
-          value={postText}
-          name=""
-          id=""
-          cols={30}
-          rows={10}
-          placeholder="conteudo do post..."
-          onChange={(event) => {
-            setPostText(event.target.value);
-          }}
-        ></Textarea>
-
-        {isUpdate ? (
-         <Button 
-        //  onClick={updateFields}
-         >UPDATE</Button>
-        ) : (
-          <Button onClick={addData}>ADD</Button>
-        )}
-
-        <div>
+        <div style={{ maxWidth: "500px" }}>
           {fireData.map((data) => {
             return (
-              <Flex>
+              <Lista>
                 <h3>Title: {data.title}</h3>
                 <p>Post: {data.postText}</p>
-                {/* <Button
+
+                <Button
                   onClick={() => getID(data.id, data.title, data.postText)}
                 >
+                  {" "}
                   Update
-                </Button> */}
+                </Button>
                 <Button onClick={() => deleteDocument(data.id)}>Delete</Button>
-              </Flex>
+              </Lista>
             );
           })}
+        </div>
+
+        <div>
+          <InputBox
+            placeholder="Titulo..."
+            type="text"
+            value={title}
+            onChange={(event) => {
+              setTitle(event.target.value);
+            }}
+          />
+
+          <Textarea
+            value={postText}
+            name=""
+            id=""
+            cols={30}
+            rows={10}
+            placeholder="Conteudo do post..."
+            onChange={(event) => {
+              setPostText(event.target.value);
+            }}
+          ></Textarea>
+
+          {isUpdate ? (
+            <Button onClick={updateFields}>UPDATE</Button>
+          ) : (
+            <Button onClick={addData}>ADD</Button>
+          )}
         </div>
       </Main>
 
       <Nav />
-    </HomeLayout>
+    </div>
   );
 };
