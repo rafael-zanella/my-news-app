@@ -1,5 +1,5 @@
 import { Header, HomeLayout, Logo } from "../Home/home.styled";
-import { Div, Input, Textarea, Select, Main, Lista } from "./Dashboard.styled";
+import { Div, Input, Textarea, Select, Main, Lista, InputBox, Button, Flex } from "./Dashboard.styled";
 // import { mockNews } from './home.mocks'
 import { Nav } from "@/components/Nav/Nav";
 import { Typography } from "@/design-system/Typography";
@@ -122,7 +122,7 @@ export const Dashboard = () => {
             Adicionar Post
           </Typography>
         </Logo>
-        <button onClick={logout}>Log out</button>
+        <Button onClick={logout}>Log out</Button>
       </Header>
 
       <Main>
@@ -133,20 +133,20 @@ export const Dashboard = () => {
                 <h3>Title: {data.title}</h3>
                 <p>Post: {data.postText}</p>
 
-                <button
+                <Button
                   onClick={() => getID(data.id, data.title, data.postText)}
                 >
                   {" "}
                   Update
-                </button>
-                <button onClick={() => deleteDocument(data.id)}>Delete</button>
+                </Button>
+                <Button onClick={() => deleteDocument(data.id)}>Delete</Button>
               </Lista>
             );
           })}
         </div>
 
         <div>
-          <input
+          <InputBox
             placeholder="Titulo..."
             type="text"
             value={title}
@@ -155,7 +155,7 @@ export const Dashboard = () => {
             }}
           />
 
-          <textarea
+          <Textarea
             value={postText}
             name=""
             id=""
@@ -165,12 +165,12 @@ export const Dashboard = () => {
             onChange={(event) => {
               setPostText(event.target.value);
             }}
-          ></textarea>
+          ></Textarea>
 
           {isUpdate ? (
-            <button onClick={updateFields}>UPDATE</button>
+            <Button onClick={updateFields}>UPDATE</Button>
           ) : (
-            <button onClick={addData}>ADD</button>
+            <Button onClick={addData}>ADD</Button>
           )}
         </div>
       </Main>

@@ -68,3 +68,21 @@ export const Select = styled.select`
   border-radius: 4px;
   box-sizing: border-box;
 `;
+
+export const InputBox = styled.input`
+  width: 200px;
+  height: 30px;
+  margin: 5px;
+`;
+
+export const Button = styled.button`
+  width: 100px;
+  height: 30px;
+  cursor: pointer;
+`;
+
+export const Flex = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+`
