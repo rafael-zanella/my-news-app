@@ -1,16 +1,9 @@
-import { Header } from '@/components/Header/Header'
-import { Nav } from '@/components/Nav/Nav'
-import { DefaultLayout } from '@/layouts/DefaultLayout'
+import { mockNews } from '@/shared/mocks/posts.mocks'
+import { Search as SearchTemplate } from '@/templates/Search'
 
 const Search = () => {
   return (
-    <DefaultLayout>
-      <Header title="Search" />
-      <main style={{ justifyContent: 'center' }}>
-        Em desenvolvimento!
-      </main>
-      <Nav />
-    </DefaultLayout>
+    <SearchTemplate onChangeFilter={() => {}} posts={mockNews} />
   )
 }
 
