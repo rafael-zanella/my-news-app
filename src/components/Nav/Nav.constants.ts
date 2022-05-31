@@ -40,13 +40,13 @@ export const menuItems: IMenu[] = [
     Icon: Search,
     IconSelected: SearchSelected
   },
-  {
-    title: 'Bookmark',
-    href: '/bookmark',
-    isActive: false,
-    Icon: Bookmark,
-    IconSelected: BookmarkSelected
-  },
+  // {
+  //   title: 'Bookmarked',
+  //   href: '/bookmarked',
+  //   isActive: false,
+  //   Icon: Bookmark,
+  //   IconSelected: BookmarkSelected
+  // },
   {
     title: 'Settings',
     href: '/settings',
