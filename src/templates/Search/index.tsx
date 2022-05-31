@@ -46,18 +46,16 @@ export const Search: FC<IProps> = ({ posts }) => {
               <ListOfPostCards>
                 {
                   posts?.length > 0 && posts.map((item) => (
-                    <Link href={`news/${item.id}`} key={item.id}>
-                      <article>
-                        <PostCard
-                          imgUrl={item.card.imgUrl}
-                          imgAlt={item.card.imgAlt}
-                          title={item.title}
-                          author={item.author.name}
-                          category={item.category}
-                          date={new Date(item.createdAt).toLocaleDateString('pt-BR')}
-                        />
-                      </article>
-                    </Link>
+                    <article key={item.id}>
+                      <PostCard
+                        imgUrl={item.card.imgUrl}
+                        imgAlt={item.card.imgAlt}
+                        title={item.title}
+                        author={item.author.name}
+                        category={item.category}
+                        date={new Date(item.createdAt).toLocaleDateString('pt-BR')}
+                      />
+                    </article>
                   ))
                 }
               </ListOfPostCards>
