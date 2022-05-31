@@ -41,8 +41,8 @@ export const menuItems: IMenu[] = [
     IconSelected: SearchSelected
   },
   {
-    title: 'Bookmark',
-    href: '/bookmark',
+    title: 'Bookmarked',
+    href: '/bookmarked',
     isActive: false,
     Icon: Bookmark,
     IconSelected: BookmarkSelected
