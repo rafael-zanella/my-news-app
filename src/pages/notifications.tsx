@@ -5,9 +5,9 @@ import { DefaultLayout } from '@/layouts/DefaultLayout'
 const Notifications = () => {
   return (
     <DefaultLayout>
-      <Header title="Notifications" />
+      <Header title="Notificações" />
       <main style={{ justifyContent: 'center' }}>
-        Em desenvolvimento!
+        Sem novas notificaçãoes!
       </main>
       <Nav />
     </DefaultLayout>

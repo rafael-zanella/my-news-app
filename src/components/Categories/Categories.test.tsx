@@ -22,7 +22,7 @@ describe('Categories', () => {
   it('should call onChange callback', () => {
     renderComponent()
 
-    const item: HTMLInputElement = screen.getByLabelText('World')
+    const item: HTMLInputElement = screen.getByLabelText('Mundo')
     expect(item.checked).toEqual(false)
 
     fireEvent.click(item)

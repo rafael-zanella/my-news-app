@@ -9,7 +9,7 @@ const About = () => {
 
   return (
     <DefaultLayout>
-      <Header onBack={back} title="About" />
+      <Header onBack={back} title="Sobre" />
 
       <main>
         <Typography type='h2' fontWeight={500}>Paragraph 1</Typography>

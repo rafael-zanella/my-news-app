@@ -1,6 +1,7 @@
 import { Search as SearchTemplate } from '@/templates/Search'
 import { useState } from 'react'
 import { IPost } from '@/shared/types/post.types'
+import nProgress from 'nprogress'
 
 // TODO: put this method in a service folder
 const findPostsByTitle = async (title: string) => {
@@ -18,6 +19,7 @@ const Search = () => {
   const [posts, setPosts] = useState<IPost[]>([])
 
   const onChangeFilter = async (title: any) => {
+    nProgress.start()
     try {
       const res = await findPostsByTitle(title)
       const data = await res.json()
@@ -25,6 +27,8 @@ const Search = () => {
     } catch (e) {
       setPosts([])
       console.error(e)
+    } finally {
+      nProgress.done()
     }
   }
 

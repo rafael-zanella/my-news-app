@@ -16,7 +16,7 @@ export const Settings = () => {
 
   return (
     <SettingsLayout>
-      <Header title="Settings" />
+      <Header title="Configurações" />
       <main>
         <Section>
           <Item>
@@ -31,7 +31,7 @@ export const Settings = () => {
             <Item>
               <div>
                 <CircleQuestion width={16} height={16} stroke={colors.onBackgroundColor} />
-                <Typography type='h3'>Terms & Conditions</Typography>
+                <Typography type='h3'>Termos & Condições</Typography>
               </div>
               <ChevronRight stroke={colors.onBackgroundColor} />
             </Item>
@@ -41,7 +41,7 @@ export const Settings = () => {
             <Item>
               <div>
                 <CircleQuestion width={16} height={16} stroke={colors.onBackgroundColor} />
-                <Typography type='h3'>About</Typography>
+                <Typography type='h3'>Sobre</Typography>
               </div>
               <ChevronRight stroke={colors.onBackgroundColor} />
             </Item>
