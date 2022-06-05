@@ -22,7 +22,7 @@ export const Settings = () => {
           <Item>
             <div>
               <Moon width={16} height={16} stroke={colors.onBackgroundColor} />
-              <Typography type='h3'>Dark Mode</Typography>
+              <Typography type='h3'>Modo escuro</Typography>
             </div>
             <Toggle checked={title === 'dark'} onChange={changeTheme} />
           </Item>
