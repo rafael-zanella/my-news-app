@@ -23,7 +23,7 @@ export const Categories: FC<IProps> = ({ defaultValue, onChange }) => {
           onChange={handleOnChange}
         />
         <RadioButtonLabel htmlFor="All">
-          <Typography type='h4'>All</Typography>
+          <Typography type='h4'>Todas</Typography>
         </RadioButtonLabel>
       </Item>
         { items.map(item => (

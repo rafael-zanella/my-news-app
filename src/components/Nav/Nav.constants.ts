@@ -1,7 +1,7 @@
 import {
   Bell,
-  Bookmark,
-  BookmarkSelected,
+  // Bookmark,
+  // BookmarkSelected,
   Home,
   HomeSelected,
   Search,

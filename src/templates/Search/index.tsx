@@ -29,7 +29,7 @@ export const Search: FC<IProps> = ({ posts, onChangeFilter }) => {
       <header>
         <Input
           type='text'
-          placeholder="Search"
+          placeholder="Pesquisar"
           Icon={<SearchIcon width={20} height={20} stroke="#909090" />}
           value={value}
           onChange={(e) => onChangeInput(e.target.value)}

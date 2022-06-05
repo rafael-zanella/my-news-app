@@ -49,7 +49,7 @@ describe('Home', () => {
   it('should call onChangeCategory callback', () => {
     renderComponent()
 
-    const item: HTMLInputElement = screen.getByLabelText('World')
+    const item: HTMLInputElement = screen.getByLabelText('Mundo')
     fireEvent.click(item)
 
     expect(onChangeCategory).toHaveBeenCalledTimes(1)

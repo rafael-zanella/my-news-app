@@ -9,7 +9,7 @@ const Terms = () => {
 
   return (
     <DefaultLayout>
-      <Header onBack={back} title="Terms & Conditions" />
+      <Header onBack={back} title="Termos & Condições" />
 
       <main>
         <Typography type='h2' fontWeight={500}>Paragraph 1</Typography>
