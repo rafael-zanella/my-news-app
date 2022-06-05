@@ -22,6 +22,7 @@ export const Item = styled.div`
   align-items: center;
   padding: 10px 0;
   border-bottom: 1px solid ${({ theme }) => theme.colors.complementaryColor};
+  cursor: pointer;
 
   div {
     display: flex;
