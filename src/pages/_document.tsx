@@ -29,9 +29,12 @@ export default class MyDocument extends Document {
   }
 
   render () {
+    const color = typeof window !== 'undefined' ? localStorage.getItem('theme') : '#FFF'
+
     return (
       <Html lang='pt'>
         <Head>
+          <meta name='theme-color' content={color as string} />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" cross-origin="true" />
           <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />

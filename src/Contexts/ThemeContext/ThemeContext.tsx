@@ -22,6 +22,7 @@ const ThemeContextProvider: FC<IProvider> = ({ initialTheme, children }) => {
   const changeTheme = () => {
     const nextTheme = theme.title === 'light' ? dark : light
     setTheme(nextTheme)
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', nextTheme.colors.backgroundColor)
     localStorage.setItem('theme', nextTheme?.title)
   }
 
@@ -32,7 +33,9 @@ const ThemeContextProvider: FC<IProvider> = ({ initialTheme, children }) => {
       const userTheme = localStorage.getItem('theme')
 
       if (userTheme) {
-        setTheme(userTheme === 'dark' ? dark : light)
+        const currentTheme = (userTheme === 'dark' ? dark : light)
+        setTheme(currentTheme)
+        document.querySelector('meta[name="theme-color"]')?.setAttribute('content', currentTheme.colors.backgroundColor)
       }
     }
   }, [])

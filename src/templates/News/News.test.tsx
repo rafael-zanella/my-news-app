@@ -19,7 +19,7 @@ describe('News', () => {
 
   it('should render the page with its components', () => {
     renderComponent()
-    screen.getByTestId('news_header')
+    screen.getByTestId('header')
     screen.getByTestId('news_banner')
     screen.getByTestId('news_details')
     screen.getByTestId('news_article')

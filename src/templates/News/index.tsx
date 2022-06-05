@@ -48,12 +48,10 @@ export const News: FC<INews> = ({ post }) => {
 
   return (
     <NewsLayout>
-      <header data-testid="news_header">
-        <Header onBack={back}>
-          <Bookmark width="25px" height="25px" stroke={colors.onBackgroundColor} />
-          <ArrowUpFromBracket width="21px" height="21px" stroke={colors.onBackgroundColor} />
-        </Header>
-      </header>
+      <Header onBack={back}>
+        <Bookmark width="25px" height="25px" stroke={colors.onBackgroundColor} />
+        <ArrowUpFromBracket width="21px" height="21px" stroke={colors.onBackgroundColor} />
+      </Header>
 
       <main>
         <Section>

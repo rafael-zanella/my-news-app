@@ -4,14 +4,12 @@ import { Section, Item, SettingsLayout } from './Settings.styled'
 import {
   Moon,
   ChevronRight,
-  User,
-  CircleQuestion,
-  ArrowRightToBracket,
-  Bell
+  CircleQuestion
 } from '@/design-system/icons'
 import { Typography } from '@/design-system/Typography'
 import { useTheme } from '@/Contexts/ThemeContext/ThemeContext'
 import { Toggle } from '@/components/Toggle/Toggle'
+import Link from 'next/link'
 
 export const Settings = () => {
   const { theme: { colors, title }, changeTheme } = useTheme()
@@ -23,51 +21,31 @@ export const Settings = () => {
         <Section>
           <Item>
             <div>
-              <User width={16} height={16} stroke={colors.onBackgroundColor} />
-              <Typography type='h3'>Profile</Typography>
-            </div>
-            <ChevronRight stroke={colors.onBackgroundColor} />
-          </Item>
-
-          <Item>
-            <div>
-              <Bell width={16} height={16} stroke={colors.onBackgroundColor} />
-              <Typography type='h3'>Notifications</Typography>
-            </div>
-            <ChevronRight stroke={colors.onBackgroundColor} />
-          </Item>
-
-          <Item>
-            <div>
               <Moon width={16} height={16} stroke={colors.onBackgroundColor} />
               <Typography type='h3'>Dark Mode</Typography>
             </div>
             <Toggle checked={title === 'dark'} onChange={changeTheme} />
           </Item>
 
-          <Item>
-            <div>
-              <CircleQuestion width={16} height={16} stroke={colors.onBackgroundColor} />
-              <Typography type='h3'>Terms & Conditions</Typography>
-            </div>
-            <ChevronRight stroke={colors.onBackgroundColor} />
-          </Item>
+          <Link href="settings/terms">
+            <Item>
+              <div>
+                <CircleQuestion width={16} height={16} stroke={colors.onBackgroundColor} />
+                <Typography type='h3'>Terms & Conditions</Typography>
+              </div>
+              <ChevronRight stroke={colors.onBackgroundColor} />
+            </Item>
+          </Link>
 
-          <Item>
-            <div>
-              <CircleQuestion width={16} height={16} stroke={colors.onBackgroundColor} />
-              <Typography type='h3'>About</Typography>
-            </div>
-            <ChevronRight stroke={colors.onBackgroundColor} />
-          </Item>
-
-          <Item>
-            <div>
-              <ArrowRightToBracket width={16} height={16} stroke={colors.onBackgroundColor} />
-              <Typography type='h3'>Log out</Typography>
-            </div>
-            <ChevronRight stroke={colors.onBackgroundColor} />
-          </Item>
+          <Link href="settings/about">
+            <Item>
+              <div>
+                <CircleQuestion width={16} height={16} stroke={colors.onBackgroundColor} />
+                <Typography type='h3'>About</Typography>
+              </div>
+              <ChevronRight stroke={colors.onBackgroundColor} />
+            </Item>
+          </Link>
         </Section>
       </main>
       <Nav />

@@ -14,8 +14,15 @@ interface IProps {
   onChangeFilter: (value: string) => void,
 }
 
-export const Search: FC<IProps> = ({ posts }) => {
+export const Search: FC<IProps> = ({ posts, onChangeFilter }) => {
   const [value, setValue] = useState('')
+
+  const onChangeInput = (value: string) => {
+    setValue(value)
+    if (value.trim()) {
+      onChangeFilter(value)
+    }
+  }
 
   return (
     <SearchLayout data-testid="search_template">
@@ -25,7 +32,7 @@ export const Search: FC<IProps> = ({ posts }) => {
           placeholder="Search"
           Icon={<SearchIcon width={20} height={20} stroke="#909090" />}
           value={value}
-          onChange={(e) => setValue(e.target.value)}
+          onChange={(e) => onChangeInput(e.target.value)}
           onClickCancelButton={() => setValue('')}
         />
       </header>
@@ -46,16 +53,18 @@ export const Search: FC<IProps> = ({ posts }) => {
               <ListOfPostCards>
                 {
                   posts?.length > 0 && posts.map((item) => (
-                    <article key={item.id}>
-                      <PostCard
-                        imgUrl={item.card.imgUrl}
-                        imgAlt={item.card.imgAlt}
-                        title={item.title}
-                        author={item.author.name}
-                        category={item.category}
-                        date={new Date(item.createdAt).toLocaleDateString('pt-BR')}
-                      />
-                    </article>
+                    <Link href={`news/${item.id}`} key={item.id}>
+                      <article key={item.id}>
+                        <PostCard
+                          imgUrl={item.card.imgUrl}
+                          imgAlt={item.card.imgAlt}
+                          title={item.title}
+                          author={item.author.name}
+                          category={item.category}
+                          date={new Date(item.createdAt).toLocaleDateString('pt-BR')}
+                        />
+                      </article>
+                    </Link>
                   ))
                 }
               </ListOfPostCards>
