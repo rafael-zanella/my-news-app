@@ -41,7 +41,7 @@ module.exports = [
     options: {
       cacheName: 'static-image-assets',
       expiration: {
-        maxEntries: 4,
+        maxEntries: 8,
         maxAgeSeconds: 24 * 60 * 60 // 24 hours
       }
     }
@@ -175,7 +175,7 @@ module.exports = [
     options: {
       cacheName: 'images-cross-origin',
       expiration: {
-        maxEntries: 6,
+        maxEntries: 9,
         maxAgeSeconds: 60 * 60 * 12 // 12 hours
       }
     }
