@@ -7,7 +7,7 @@ const Notifications = () => {
     <DefaultLayout>
       <Header title="Notificações" />
       <main style={{ justifyContent: 'center' }}>
-        Sem novas notificaçãoes!
+        Sem novas notificações!
       </main>
       <Nav />
     </DefaultLayout>
