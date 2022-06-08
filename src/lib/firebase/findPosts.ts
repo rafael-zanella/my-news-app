@@ -18,8 +18,10 @@ export const findPosts = async ({ category, title }: IFindPostsParams): Promise<
   const queryConstraints = []
   const postsFromDB: any = []
 
-  if (category) queryConstraints.push(where('category', '==', `${category}`), orderBy('createdAt', 'desc'))
+  if (category) queryConstraints.push(where('category', '==', `${category}`))
   if (title) queryConstraints.push(where('title', '>=', `${title}`), where('title', '<=', `${title}\uf8ff`))
+
+  if (!title) queryConstraints.push(orderBy('createdAt', 'desc'))
 
   const postsQuery = query(postsRef, ...queryConstraints)
   const querySnapshot = await getDocs(postsQuery)
