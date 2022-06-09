@@ -11,14 +11,13 @@ interface IResponse {
 }
 
 export const findAuthorById = async (id: string): Promise<IResponse | null> => {
-  const authorDocRef = doc(db, 'authors', id)
+  try {
+    const authorDocRef = doc(db, 'authors', id)
 
-  const docSnap = await getDoc(authorDocRef)
-  const authorData = docSnap.data() as IAuthor
-
-  if (authorData) {
+    const docSnap = await getDoc(authorDocRef)
+    const authorData = docSnap.data() as IAuthor
     return { author: authorData }
-  } else {
+  } catch (e) {
     return null
   }
 }

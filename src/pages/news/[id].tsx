@@ -12,6 +12,10 @@ export const getStaticProps = async ({ params }: { params: { id: string }}) => {
     }
   }
 
+  const { post } = data
+
+  post.createdAt = new Date(post.createdAt).toLocaleDateString('pt-BR')
+
   return {
     props: {
       post: data?.post

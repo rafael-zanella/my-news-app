@@ -35,7 +35,9 @@ export const Home: FC<IHome> = ({ posts = [], onChangeCategory }) => {
         {
           posts?.length < 1 && (
             <ListOfPostCards>
-              <Typography type='h3'>Nenhuma notícia encontrada!</Typography>
+              <div style={{ alignSelf: 'center' }}>
+                <Typography type='h3'>Nenhuma notícia encontrada!</Typography>
+              </div>
             </ListOfPostCards>
           )
         }
@@ -51,7 +53,7 @@ export const Home: FC<IHome> = ({ posts = [], onChangeCategory }) => {
                     title={item.title}
                     author={item.author.name}
                     category={item.category}
-                    date={item.createdAt}
+                    date={new Date(item.createdAt).toLocaleDateString('pt-BR')}
                   />
                 </article>
               </Link>

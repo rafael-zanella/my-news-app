@@ -16,7 +16,7 @@ export const mockNews: IPost[] = [
       name: 'Rafael Zanella',
       picture: ''
     },
-    category: 'Technology',
+    category: 'Tecnologia',
     createdAt: '2022-04-02',
     updatedAt: '',
     deletedAt: '',
@@ -38,7 +38,7 @@ export const mockNews: IPost[] = [
       name: 'John Doe',
       picture: ''
     },
-    category: 'Business',
+    category: 'Negócios',
     createdAt: '2022-04-02',
     updatedAt: '',
     deletedAt: '',
@@ -60,7 +60,7 @@ export const mockNews: IPost[] = [
       name: 'John Doe',
       picture: ''
     },
-    category: 'Entertainment',
+    category: 'Entretenimento',
     createdAt: '2022-04-02',
     updatedAt: '',
     deletedAt: '',
@@ -82,7 +82,7 @@ export const mockNews: IPost[] = [
       name: 'John Doe',
       picture: ''
     },
-    category: 'Science',
+    category: 'Ciência',
     createdAt: '2022-04-02',
     updatedAt: '',
     deletedAt: '',
@@ -104,7 +104,7 @@ export const mockNews: IPost[] = [
       name: 'John Doe',
       picture: ''
     },
-    category: 'Science',
+    category: 'Ciência',
     createdAt: '2022-04-02',
     updatedAt: '',
     deletedAt: '',
@@ -126,7 +126,7 @@ export const mockNews: IPost[] = [
       name: 'John Doe',
       picture: ''
     },
-    category: 'Science',
+    category: 'Ciência',
     createdAt: '2022-04-02',
     updatedAt: '',
     deletedAt: '',

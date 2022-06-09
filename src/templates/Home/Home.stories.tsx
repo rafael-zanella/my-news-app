@@ -1,6 +1,6 @@
 import { Meta } from '@storybook/react'
 import { Home } from './'
-import { mockNews } from './home.mocks'
+import { mockNews } from '../../shared/mocks/posts.mocks'
 
 export default {
   title: 'Templates/Home',

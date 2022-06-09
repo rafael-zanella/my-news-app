@@ -48,12 +48,10 @@ export const News: FC<INews> = ({ post }) => {
 
   return (
     <NewsLayout>
-      <header data-testid="news_header">
-        <Header onBack={back}>
-          <Bookmark width="25px" height="25px" stroke={colors.onBackgroundColor} />
-          <ArrowUpFromBracket width="21px" height="21px" stroke={colors.onBackgroundColor} />
-        </Header>
-      </header>
+      <Header onBack={back}>
+        <Bookmark width="25px" height="25px" stroke={colors.onBackgroundColor} />
+        <ArrowUpFromBracket width="21px" height="21px" stroke={colors.onBackgroundColor} />
+      </Header>
 
       <main>
         <Section>
@@ -69,7 +67,7 @@ export const News: FC<INews> = ({ post }) => {
             <Author>
               <img src={post.author.picture} alt={`foto do autor ${post.author.name}`} />
               <Typography type='h4' color={colors.onComplementaryColor}>By {post?.author?.name}</Typography>
-              <Typography type='h4' color={colors.onComplementaryColor}>1h ago</Typography>
+              <Typography type='h4' color={colors.onComplementaryColor}>{post.createdAt}</Typography>
             </Author>
 
             <Actions>

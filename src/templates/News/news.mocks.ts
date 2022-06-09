@@ -15,7 +15,7 @@ export const mockPost: IPost = {
     name: 'John Doe',
     picture: ''
   },
-  category: 'Science',
+  category: 'Ciência',
   createdAt: '2022-04-02',
   updatedAt: '',
   deletedAt: '',

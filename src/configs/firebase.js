@@ -22,8 +22,8 @@ const app = initializeApp(firebaseConfig)
 export const auth = getAuth(app)
 export const provider = new GoogleAuthProvider()
 // export const db = getFirestore(app)
+const storage = getStorage(app)
 const db = getFirestore(app)
-export const storage = getStorage(app);
 
 if (process.browser) {
   enableIndexedDbPersistence(db)
@@ -42,4 +42,4 @@ if (process.browser) {
     })
 }
 
-export { db }
+export { db, storage }

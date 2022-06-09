@@ -1,7 +1,7 @@
 import { ThemeContextProvider } from '@/Contexts/ThemeContext/ThemeContext'
 import { fireEvent, render, screen } from '@testing-library/react'
 import { Home } from '.'
-import { mockNews } from './home.mocks'
+import { mockNews } from '@/shared/mocks/posts.mocks'
 
 const onChangeCategory = jest.fn()
 
@@ -49,7 +49,7 @@ describe('Home', () => {
   it('should call onChangeCategory callback', () => {
     renderComponent()
 
-    const item: HTMLInputElement = screen.getByLabelText('World')
+    const item: HTMLInputElement = screen.getByLabelText('Mundo')
     fireEvent.click(item)
 
     expect(onChangeCategory).toHaveBeenCalledTimes(1)
