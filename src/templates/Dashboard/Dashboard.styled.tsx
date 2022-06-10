@@ -1,6 +1,10 @@
 import { DefaultLayout } from "@/layouts/DefaultLayout";
 import styled from "styled-components";
 
+interface IProps {
+  progress: any,
+}
+
 export const Dashboard = styled(DefaultLayout)`
   main {
     display: flex;
@@ -19,7 +23,7 @@ export const Div = styled.div`
 export const Main = styled.div`
   margin: 80px 80px 0 150px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   gap: 40px;
 `;
 
@@ -79,10 +83,70 @@ export const Button = styled.button`
   width: 100px;
   height: 30px;
   cursor: pointer;
+  margin: 0 5px;
 `;
 
 export const Flex = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
-`
+`;
+
+export const Bar = styled.div`
+  height: 20px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+`;
+
+export const Progress = styled.div<IProps>`
+  background-image: -webkit-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.15) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.15) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-image: -o-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.15) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.15) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-image: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.15) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.15) 75%,
+    transparent 75%,
+    transparent
+  );
+  -webkit-background-size: 40px 40px;
+  background-size: 40px 40px;
+
+  float: left;
+  width: 0%;
+  height: 100%;
+  font-size: 12px;
+  line-height: 20px;
+  color: #fff;
+  text-align: center;
+  background-color: #337ab7;
+  -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+  -webkit-transition: width 0.6s ease;
+  -o-transition: width 0.6s ease;
+  transition: width 0.6s ease;
+`;

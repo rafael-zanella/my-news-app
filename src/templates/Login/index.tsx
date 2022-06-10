@@ -5,11 +5,10 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
 } from "firebase/auth";
-import { Container, GoogleContainer } from "./Login.styled";
+import { Container, GoogleContainer, Main, Or, A } from "./Login.styled";
 import { useRouter } from "next/router";
 import { InputLogin } from "@/components/InputLogin/InputLogin";
 import { Button } from "@/components/Button/Button";
-import { GoogleLogoWithBorder } from "@/design-system/icons";
 import { LogoLogin } from "@/components/LogoLogin/LogoLogin";
 
 export const Login = () => {
@@ -54,7 +53,7 @@ export const Login = () => {
   return (
     <Container className="loginPage">
       <LogoLogin />
-      <main style={{ margin: "0 20%" }}>
+      <Main>
         <InputLogin
           id="Email"
           placeholder="Email"
@@ -73,43 +72,28 @@ export const Login = () => {
 
         <Button label="Sign In" onClick={signIn} />
 
+        <Or></Or>
+
         <div
           style={{
             display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-around",
-            marginTop: "30px",
+            flexDirection: "column",
+            alignItems: "center",
           }}
         >
-          <div style={{ width: "150px" }}>
-            <p style={{ textAlign: "center" }}> ou entre com</p>
-
+          <div>
             <GoogleContainer>
-              <button
-                type="submit"
-                variant="contained"
-                color="primary"
-                onClick={signUpWithGoogle}
-                style={{ border: "none", background: "none" }}
-              >
-                <GoogleLogoWithBorder
-                  data-testid="button_login_google_logo"
-                  stroke="black"
-                  width="15%"
-                  height="100%"
-                />
-              </button>
+            <button type="button" className="login-with-google-btn" onClick={signUpWithGoogle}>
+              Logar com Google
+            </button>
             </GoogleContainer>
           </div>
 
-          <div style={{ width: "150px" }}>
-            <p style={{ textAlign: "center", marginBottom: "10px" }}>
-              Não tem uma conta:
-            </p>
-            <Button label="Sign Up" onClick={singUp} />
+          <div>
+            <span style={{fontSize: "13px"}}>ou </span><A href="/register" onClick={singUp}>Cadastre-se</A>
           </div>
         </div>
-      </main>
+      </Main>
     </Container>
   );
 };

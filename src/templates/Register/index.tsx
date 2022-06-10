@@ -1,4 +1,4 @@
-import { Container, GoogleContainer } from "./Register.styled";
+import { Container, GoogleContainer, Main, Or, A } from "./Register.styled";
 import { auth } from "../../configs/firebase";
 import { useEffect } from "react";
 import {
@@ -11,7 +11,6 @@ import { useRouter } from "next/router";
 import { LogoLogin } from "@/components/LogoLogin/LogoLogin";
 import { InputLogin } from "@/components/InputLogin/InputLogin";
 import { Button } from "@/components/Button/Button";
-import { GoogleLogoWithBorder } from "@/design-system/icons";
 
 export const Register = () => {
   const googleProvider = new GoogleAuthProvider();
@@ -55,7 +54,7 @@ export const Register = () => {
   return (
     <Container>
       <LogoLogin />
-      <main style={{ margin: "0 20%" }}>
+      <Main>
         <InputLogin
           id="Email"
           type="email"
@@ -74,44 +73,29 @@ export const Register = () => {
 
         <Button label="Sign Up" onClick={signUp} />
 
+        <Or></Or>
+
         <div
           style={{
             display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-around",
-            marginTop: "30px",
+            flexDirection: "column",
+            alignItems: "center",
           }}
         >
-          <div style={{ width: "150px" }}>
-            <p style={{ textAlign: "center" }}> ou entre com</p>
-
+          <div>
             <GoogleContainer>
-              <button
-                type="submit"
-                variant="contained"
-                color="primary"
-                onClick={signUpWithGoogle}
-                style={{ border: "none", background: "none" }}
-              >
-                <GoogleLogoWithBorder
-                  data-testid="button_login_google_logo"
-                  stroke="black"
-                  width="15%"
-                  height="100%"
-                />
-              </button>
+            <button type="button" className="login-with-google-btn" onClick={signUpWithGoogle}>
+              Registrar com Google
+            </button>
             </GoogleContainer>
           </div>
 
-          <div style={{ width: "150px" }}>
-            <p style={{ textAlign: "center", marginBottom: "10px" }}>
-              Já tem uma conta:{" "}
-            </p>
-            <Button label="Sign In" onClick={login} />
+          <div>
+            <span style={{fontSize: "13px"}}>ou </span><A href="/register" onClick={login}>Entre</A>
           </div>
         </div>
 
-        <a
+        <A
           href="#"
           style={{
             display: "flex",
@@ -120,8 +104,8 @@ export const Register = () => {
           }}
         >
           TERMOS E CONDIÇÕES
-        </a>
-      </main>
+        </A>
+      </Main>
     </Container>
   );
 };
