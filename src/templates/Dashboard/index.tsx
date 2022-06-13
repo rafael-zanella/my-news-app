@@ -11,6 +11,8 @@ import {
   Flex,
   Bar,
   Progress,
+  Select2,
+  Wrapper,
 } from "./Dashboard.styled";
 // import { mockNews } from './home.mocks'
 import { Nav } from "@/components/Nav/Nav";
@@ -44,7 +46,7 @@ import {
 } from "firebase/storage";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { toast } from "react-toastify";
+//import { toast } from "react-toastify";
 import { InputLogin } from "@/components/InputLogin/InputLogin";
 
 export const Dashboard = () => {
@@ -168,12 +170,16 @@ export const Dashboard = () => {
             Adicionar Post
           </Typography>
         </Logo>
-        <Button onClick={logout}>Log out</Button>
       </Header>
 
       <Main>
 
-      <div>
+      <div style={{
+        padding: '25px 50px',
+        borderRadius: '10px',
+        boxShadow: '5px 10px 20px 5px #b7b4b4',
+        height: '100%'
+      }}>
             <InputBox
               type="text"
               name="title"
@@ -190,13 +196,59 @@ export const Dashboard = () => {
             rows={10}
             placeholder="Conteudo do post..."
           />
-
-          <input
+          {/* <input
             type="file"
             name="image"
             accept="image/*"
             onChange={(e) => handleImageChange(e)}
-          />
+          /> */}
+          {/* <input
+            type="file"
+            name="image"
+            accept="image/*"
+            onChange={(e) => handleImageChange(e)}
+          /> */}
+
+          <p style={{
+            cursor: 'pointer',
+            fontSize: '16px',
+            fontWeight: 700,
+            margin: '0px 0px 0px 5px'
+          }}>Adicione imagem da thumb</p>
+<Wrapper type="file" id="pictureInput" name="picture" />
+<p style={{
+            cursor: 'pointer',
+            fontSize: '16px',
+            fontWeight: 700,
+            margin: '0px 0px 0px 5px'
+          }}>Adicione imagem do card</p>
+<Wrapper type="file" id="pictureInput" name="picture" />
+
+
+<div style={{
+      display: 'flex',
+      gap: '25px',
+      marginLeft: '5px',
+      marginTop: '15px',
+      marginBottom: '15px'
+}}>
+
+<Select2>
+  <select>
+    <option>Selecione Categoria</option>
+    <option>The second option</option>
+    <option>The third option</option>
+  </select>
+</Select2>
+
+<Select2>
+  <select>
+    <option>Selecione Autor</option>
+    <option>The second option</option>
+    <option>The third option</option>
+  </select>
+</Select2>
+</div>
 
           {progress === 0 ? null : (
             <Bar className="progress">
@@ -212,7 +264,7 @@ export const Dashboard = () => {
           <Button
             onClick={handlePublish}
           >
-            Publish
+            Publicar
           </Button>
         </div>
 
@@ -244,13 +296,13 @@ export const Dashboard = () => {
                       onClick={() => handleDelete(item.card.imgUrl)}
                       style={{ cursor: "pointer" }}
                     >
-                      Delete
+                      Deletar
                     </Button>
                     <Button
                       onClick={() => {}}
                     >
                       {" "}
-                      Update
+                      Atualizar
                     </Button>
                     {/* <Button onClick={() => {}}>
                       Delete

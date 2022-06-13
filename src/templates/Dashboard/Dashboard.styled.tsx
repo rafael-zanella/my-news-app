@@ -52,15 +52,16 @@ export const Input = styled.input`
 `;
 
 export const Textarea = styled.textarea`
-  width: 100%;
-  height: 150px;
-  padding: 12px 20px;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  background-color: #f8f8f8;
-  font-size: 16px;
-  resize: none;
+    width: 100%;
+    height: 150px;
+    padding: 12px 15px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 14px;
+    resize: none;
+    margin-bottom: 10px;
 `;
 
 export const Select = styled.select`
@@ -74,9 +75,82 @@ export const Select = styled.select`
 `;
 
 export const InputBox = styled.input`
-  width: 200px;
-  height: 30px;
-  margin: 5px;
+    width: 100%;
+    height: 30px;
+    margin: 5px 0;
+    padding: 0 15px;
+    font-size: 14px;
+    background-color: #f8f8f8;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+`;
+
+export const Wrapper = styled.input`
+  
+  font-size: 16px;
+  display: block;
+  width: 100%;
+  padding: 10px 5px;
+  background-color: var(--color-gray);
+  border: none;
+  border: 4px solid var(--color-gray);
+  outline: none;
+  border-radius: 8px;
+  color: var(--color-dark-gray);
+
+
+&:focus {
+  background-color: #fff;
+  color: var(--color-dark-gray);
+}
+
+&:focus:required:invalid {
+  border-color: var(--color-pink);
+  background-color: #fff;
+
+}
+`;
+
+export const Select2 = styled.div`
+overflow: hidden;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.25);
+	padding-right: 10px;
+	position: relative;
+	z-index: 1;
+	
+	&:before {
+		content: '\25BC';
+		position: absolute;
+		font-size: 8px;
+		-webkit-transform: scaleY(.7);
+		-moz-transform: scaleY(.7);
+		-ms-transform: scaleY(.7);
+		-o-transform: scaleY(.7);
+		transform: scaleY(.7);
+		right: 0;
+		top: 50%;
+		margin-top: -4px;
+		background: transparent;
+		width: 30px;
+		text-align: center;
+		pointer-events: none;
+		z-index: 2;
+	}
+
+	select {
+		background: transparent;
+		border-radius: 0;
+		padding: 5px; /* If you add too much padding here, the options won't show in IE */
+		border: 0;
+		outline: none;
+		color: inherit;
+		height: 2.1em;
+		width: calc(100% + 50px);
+		max-width: none !important;
+    font-size: 14px;
+
+	}
 `;
 
 export const Button = styled.button`
